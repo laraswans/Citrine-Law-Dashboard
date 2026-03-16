@@ -23,11 +23,11 @@
                       "Entity": "Lawmatics-Prospects-Expanded"
                     }
                   },
-                  "Property": "created_at"
+                  "Property": "CreatedDate"
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Created",
-              "nativeQueryRef": "created_at",
+              "nativeQueryRef": "CreatedDate",
               "active": true
             }
           ]
@@ -43,7 +43,7 @@
                     "Entity": "Lawmatics-Prospects-Expanded"
                   }
                 },
-                "Property": "created_at"
+                "Property": "CreatedDate"
               }
             },
             "direction": "Ascending"
@@ -197,7 +197,7 @@
                                 "Source": "q"
                               }
                             },
-                            "Property": "created_at"
+                            "Property": "CreatedDate"
                           }
                         },
                         "LowerBound": {

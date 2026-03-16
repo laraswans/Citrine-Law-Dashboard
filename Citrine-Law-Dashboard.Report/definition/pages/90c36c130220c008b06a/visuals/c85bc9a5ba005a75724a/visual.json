@@ -17,106 +17,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Lawmatics-Prospects-Expanded"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "CreatedDate"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
+                    "SourceRef": {
+                      "Entity": "Lawmatics-Prospects-Expanded"
                     }
                   },
-                  "Level": "Year"
+                  "Property": "MonthStart"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.CreatedDate.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "CreatedDate Year",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Lawmatics-Prospects-Expanded"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "CreatedDate"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Quarter"
-                }
-              },
-              "queryRef": "Lawmatics-Prospects-Expanded.CreatedDate.Variation.Date Hierarchy.Quarter",
-              "nativeQueryRef": "CreatedDate Quarter",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Lawmatics-Prospects-Expanded"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "CreatedDate"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Month"
-                }
-              },
-              "queryRef": "Lawmatics-Prospects-Expanded.CreatedDate.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "CreatedDate Month",
-              "active": true
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "PropertyVariationSource": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "Lawmatics-Prospects-Expanded"
-                            }
-                          },
-                          "Name": "Variation",
-                          "Property": "CreatedDate"
-                        }
-                      },
-                      "Hierarchy": "Date Hierarchy"
-                    }
-                  },
-                  "Level": "Day"
-                }
-              },
-              "queryRef": "Lawmatics-Prospects-Expanded.CreatedDate.Variation.Date Hierarchy.Day",
-              "nativeQueryRef": "CreatedDate Day",
+              "queryRef": "Lawmatics-Prospects-Expanded.MonthStart",
+              "nativeQueryRef": "MonthStart",
               "active": true
             }
           ]
