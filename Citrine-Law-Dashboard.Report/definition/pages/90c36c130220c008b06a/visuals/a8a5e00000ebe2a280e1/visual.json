@@ -38,7 +38,7 @@
                       "Entity": "Lawmatics-Prospects-Expanded"
                     }
                   },
-                  "Property": "Status"
+                  "Property": "stage_name"
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Status",
@@ -89,7 +89,7 @@
                     "Entity": "Lawmatics-Prospects-Expanded"
                   }
                 },
-                "Property": "Status"
+                "Property": "stage_name"
               }
             },
             "direction": "Ascending"
