@@ -1,0 +1,143 @@
+table Lawmatics-TimeEntries
+	lineageTag: 43fe1899-5ab5-45fe-aa73-91a101f91de7
+
+	column id
+		dataType: string
+		lineageTag: 2dd14c8a-8d3b-4810-b334-6b28c9c02d45
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column type
+		dataType: string
+		lineageTag: 2187907a-6cc2-4d17-bf4c-fac67421da95
+		summarizeBy: none
+		sourceColumn: type
+
+		annotation SummarizationSetBy = Automatic
+
+	column matter_id
+		dataType: string
+		lineageTag: cf95daaa-0e5f-472c-8dd5-08a9e135df0f
+		summarizeBy: none
+		sourceColumn: matter_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_id
+		dataType: string
+		lineageTag: fa61cdc4-cccc-43ee-ba49-6bb16406c4b4
+		summarizeBy: none
+		sourceColumn: user_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration
+		dataType: double
+		lineageTag: dfe19386-ee46-4939-9800-4d1b605d8102
+		summarizeBy: sum
+		sourceColumn: duration
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column description
+		dataType: string
+		lineageTag: b6272b2d-7157-4e59-aac3-61ce3534de15
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6845a9f7-5c1b-40b6-a03c-34a61e054e8b
+		summarizeBy: none
+		sourceColumn: date
+
+		variation Variation
+			isDefault
+			relationship: 235f33fd-f73f-418c-8b37-ea8b644d93f1
+			defaultHierarchy: LocalDateTable_b499819b-317b-4e31-abe2-353ec401c5d2.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column rate
+		dataType: double
+		lineageTag: a66910df-87cf-4013-9d05-9c5e39aaffa4
+		summarizeBy: sum
+		sourceColumn: rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column billable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2bc9cfb0-467f-475d-91ab-ecdc9b653a5b
+		summarizeBy: none
+		sourceColumn: billable
+
+		annotation SummarizationSetBy = Automatic
+
+	column _skyvia_sync
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2458af7b-872d-4866-9b2b-a6516f3fe639
+		summarizeBy: none
+		sourceColumn: _skyvia_sync
+
+		variation Variation
+			isDefault
+			relationship: 690d7dac-53e8-4349-a107-b758700af36e
+			defaultHierarchy: LocalDateTable_515dc36e-6e06-46b2-82cb-908ae6f1c489.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 74fb03a3-2d17-40fa-b654-8d0bd7b41dfd
+		summarizeBy: none
+		sourceColumn: CreatedDate
+
+		variation Variation
+			isDefault
+			relationship: 0cd83f98-b793-4dcd-9c27-dedfa3fb9256
+			defaultHierarchy: LocalDateTable_47257c1d-ca87-4573-84c2-b1f76f705303.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5e4cc82f-b749-4991-8824-6f4be88934fc
+		summarizeBy: none
+		sourceColumn: UpdatedDate
+
+		variation Variation
+			isDefault
+			relationship: 47a7f567-c3d3-4725-b686-48a721cd2afc
+			defaultHierarchy: LocalDateTable_541f1efb-7149-427d-8a30-fc97d337a014.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Lawmatics-TimeEntries = m
+		mode: import
+		source =
+				let
+				    Source = GoogleBigQuery.Database([Implementation="2.0"]),
+				    #"caramel-compass-452313-u3_Database" = Source{[Name="caramel-compass-452313-u3",Kind="Database"]}[Data],
+				    lawmatics_Schema = #"caramel-compass-452313-u3_Database"{[Name="lawmatics",Kind="Schema"]}[Data],
+				    TimeEntries_Table = lawmatics_Schema{[Name="TimeEntries",Kind="Table"]}[Data]
+				in
+				    TimeEntries_Table
+
+	annotation PBI_ResultType = Table
+
