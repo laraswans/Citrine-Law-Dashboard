@@ -23,11 +23,11 @@
                       "Entity": "Lawmatics-Prospects-Expanded"
                     }
                   },
-                  "Property": "CreatedDate"
+                  "Property": "created_at"
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Created",
-              "nativeQueryRef": "CreatedDate"
+              "nativeQueryRef": "created_at"
             },
             {
               "field": {
@@ -238,7 +238,7 @@
                     "Entity": "Lawmatics-Prospects-Expanded"
                   }
                 },
-                "Property": "CreatedDate"
+                "Property": "created_at"
               }
             },
             "direction": "Descending"

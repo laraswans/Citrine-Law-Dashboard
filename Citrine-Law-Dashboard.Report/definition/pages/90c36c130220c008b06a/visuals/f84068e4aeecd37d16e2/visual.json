@@ -23,11 +23,11 @@
                       "Entity": "Lawmatics-Prospects-Expanded"
                     }
                   },
-                  "Property": "Start of Month"
+                  "Property": "MonthStart"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Start of Month",
-              "nativeQueryRef": "Start of Month",
+              "queryRef": "Lawmatics-Prospects-Expanded.MonthStart",
+              "nativeQueryRef": "MonthStart",
               "active": true
             }
           ]
