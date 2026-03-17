@@ -1,13 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "f84068e4aeecd37d16e2",
   "position": {
-    "x": 122,
-    "y": 958,
+    "x": 868.57142857142867,
+    "y": 958.57142857142867,
     "z": 15000,
-    "height": 494,
-    "width": 1078,
-    "tabOrder": 1000
+    "height": 492.85714285714289,
+    "width": 938.57142857142867
   },
   "visual": {
     "visualType": "lineChart",
@@ -17,17 +16,106 @@
           "projections": [
             {
               "field": {
-                "Column": {
+                "HierarchyLevel": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Lawmatics-Prospects-Expanded"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Start of Month"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
                     }
                   },
-                  "Property": "MonthStart"
+                  "Level": "Year"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.MonthStart",
-              "nativeQueryRef": "MonthStart",
+              "queryRef": "Lawmatics-Prospects-Expanded.Start of Month.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "Start of Month Year",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Lawmatics-Prospects-Expanded"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Start of Month"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Quarter"
+                }
+              },
+              "queryRef": "Lawmatics-Prospects-Expanded.Start of Month.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "Start of Month Quarter",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Lawmatics-Prospects-Expanded"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Start of Month"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Month"
+                }
+              },
+              "queryRef": "Lawmatics-Prospects-Expanded.Start of Month.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "Start of Month Month",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "PropertyVariationSource": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Entity": "Lawmatics-Prospects-Expanded"
+                            }
+                          },
+                          "Name": "Variation",
+                          "Property": "Start of Month"
+                        }
+                      },
+                      "Hierarchy": "Date Hierarchy"
+                    }
+                  },
+                  "Level": "Day"
+                }
+              },
+              "queryRef": "Lawmatics-Prospects-Expanded.Start of Month.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "Start of Month Day",
               "active": true
             }
           ]
@@ -102,7 +190,7 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Conversion Rate",
-              "nativeQueryRef": "Conversion Rate"
+              "nativeQueryRef": "Conv. Rate"
             }
           ]
         },
@@ -144,20 +232,12 @@
       "categoryAxis": [
         {
           "properties": {
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
             "labelColor": {
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#777777'"
                     }
                   }
                 }
@@ -166,35 +246,17 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "9D"
                 }
               }
             },
-            "axisType": {
+            "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'Categorical'"
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
                 }
               }
             },
-            "gridlineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      ],
-      "valueAxis": [
-        {
-          "properties": {
             "gridlineShow": {
               "expr": {
                 "Literal": {
@@ -208,14 +270,19 @@
                   "Value": "false"
                 }
               }
-            },
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
             "labelColor": {
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#777777'"
                     }
                   }
                 }
@@ -224,123 +291,49 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "y2Axis": [
-        {
-          "properties": {
-            "secLabelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
+                  "Value": "9D"
                 }
               }
             },
-            "secFontSize": {
+            "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "legend": [
-        {
-          "properties": {
-            "labelColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
                 }
               }
             },
-            "matchLineColor": {
+            "gridlineShow": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
             },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "12D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
+            "gridlineColor": {
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 5,
-                      "Percent": 0.2
+                    "Literal": {
+                      "Value": "'#e0cdb3'"
                     }
                   }
                 }
               }
-            }
-          },
-          "selector": {
-            "metadata": "Lawmatics-Prospects-Expanded.Hired"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 3,
-                      "Percent": 0.2
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Lawmatics-Prospects-Expanded.Total Leads"
-          }
-        }
-      ],
-      "lineStyles": [
-        {
-          "properties": {
-            "strokeWidth": {
+            },
+            "gridlineStyle": {
               "expr": {
                 "Literal": {
-                  "Value": "3D"
+                  "Value": "1D"
+                }
+              }
+            },
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
-          },
-          "selector": {
-            "metadata": "Lawmatics-Prospects-Expanded.Total Leads"
           }
         }
       ],
@@ -358,9 +351,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#444444'"
                     }
                   }
                 }
@@ -369,7 +361,37 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#6bb5ad'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "strokeWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
                 }
               }
             }
@@ -378,45 +400,6 @@
       ]
     },
     "visualContainerObjects": {
-      "title": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'6-Month Trend'"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "18D"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            }
-          }
-        }
-      ],
       "background": [
         {
           "properties": {
@@ -425,9 +408,16 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#222222'"
+                      "Value": "'#f7f0e0'"
                     }
                   }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -456,7 +446,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#222222'"
+                      "Value": "'#d4b896'"
                     }
                   }
                 }
@@ -465,7 +455,7 @@
             "width": {
               "expr": {
                 "Literal": {
-                  "Value": "2D"
+                  "Value": "1D"
                 }
               }
             }
@@ -486,9 +476,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0.2
+                    "Literal": {
+                      "Value": "'#c0a880'"
                     }
                   }
                 }
@@ -504,7 +493,7 @@
             "shadowSpread": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "0D"
                 }
               }
             },
@@ -518,7 +507,52 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "40D"
+                  "Value": "70D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'6-Month Lead Trend'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#3a3a3a'"
+                    }
+                  }
                 }
               }
             }
@@ -540,18 +574,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FFFFFF'"
-                    }
-                  }
-                }
-              }
-            },
-            "border": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#222222'"
+                      "Value": "'#444444'"
                     }
                   }
                 }
@@ -562,22 +585,20 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#222222'"
+                      "Value": "'#f7f0e0'"
                     }
                   }
                 }
               }
-            }
-          }
-        }
-      ],
-      "visualTooltip": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+            },
+            "border": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#e0cdb3'"
+                    }
+                  }
                 }
               }
             }
@@ -690,7 +711,6 @@
             }
           ]
         },
-        "howCreated": "User",
         "objects": {
           "general": [
             {

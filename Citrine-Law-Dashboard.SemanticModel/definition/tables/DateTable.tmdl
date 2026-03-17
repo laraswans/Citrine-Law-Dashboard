@@ -1,0 +1,95 @@
+table DateTable
+	lineageTag: f1a2b3c4-d5e6-7890-abcd-ef1234567890
+
+	column Date
+		formatString: General Date
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-111111111111
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-222222222222
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		formatString: 0
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-333333333333
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-444444444444
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-555555555555
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearMonth]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthStart
+		formatString: General Date
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-666666666666
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthStart]
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentQuarter = IF([Date] >= DATE(YEAR(TODAY()), CEILING(MONTH(TODAY()), 3) - 2, 1) && [Date] <= EOMONTH(DATE(YEAR(TODAY()), CEILING(MONTH(TODAY()), 3), 1), 0), "Yes", "No")
+		dataType: string
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-777777777777
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter = "Q" & CEILING(MONTH([Date]), 3) / 3
+		dataType: string
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-888888888888
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearQuarter = DateTable[Year] & " " & DateTable[Quarter]
+		dataType: string
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-999999999999
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsCurrentMonth = IF(YEAR([Date]) = YEAR(TODAY()) && MONTH([Date]) = MONTH(TODAY()), "Current", "Other")
+		dataType: string
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-aaaaaaaaaaaa
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DateTable = calculated
+		mode: import
+		source =
+				ADDCOLUMNS(
+				    CALENDAR(DATE(2019,1,1), DATE(2028,12,31)),
+				    "Year", YEAR([Date]),
+				    "Month", MONTH([Date]),
+				    "MonthName", FORMAT([Date], "MMM YYYY"),
+				    "YearMonth", FORMAT([Date], "YYYY-MM"),
+				    "MonthStart", EOMONTH([Date], -1) + 1
+				)
+

@@ -1,6 +1,33 @@
 table Clio-PIMatterAccruals
 	lineageTag: 0a851163-4f63-4986-8a44-5f0e44adb984
 
+	measure 'Accrued Balance' = SUM('Clio-PIMatterAccruals'[ValueOutstandingBalance])
+		lineageTag: d1000001-0000-0000-0000-000000000001
+
+	measure 'Payment Amount This Month' = SUM('Clio-PIMatterAccruals'[ValuePaymentAmountThisMonth])
+		lineageTag: d1000002-0000-0000-0000-000000000002
+
+	measure 'Accrued Amount This Month' = SUM('Clio-PIMatterAccruals'[ValueAccruedAmountThisMonth])
+		lineageTag: d1000003-0000-0000-0000-000000000003
+
+	measure 'Net Payment Amount This Month' = SUM('Clio-PIMatterAccruals'[FirmFeesPaymentAmountThisMonth])
+		lineageTag: d1000004-0000-0000-0000-000000000004
+
+	measure 'Net Accrued Amount This Month' = SUM('Clio-PIMatterAccruals'[FirmFeesAccruedAmountThisMonth])
+		lineageTag: d1000005-0000-0000-0000-000000000005
+
+	measure 'Net Accrued Balance' = SUM('Clio-PIMatterAccruals'[FirmFeesOutstandingBalance])
+		lineageTag: d1000006-0000-0000-0000-000000000006
+
+	measure 'Diff - Payment Amount This Month' = [Payment Amount This Month] - [Net Payment Amount This Month]
+		lineageTag: d1000007-0000-0000-0000-000000000007
+
+	measure 'Diff - Accrued Amount This Month' = [Accrued Amount This Month] - [Net Accrued Amount This Month]
+		lineageTag: d1000008-0000-0000-0000-000000000008
+
+	measure 'Diff - Accrued Balance' = [Accrued Balance] - [Net Accrued Balance]
+		lineageTag: d1000009-0000-0000-0000-000000000009
+
 	column MatterId
 		dataType: int64
 		formatString: 0

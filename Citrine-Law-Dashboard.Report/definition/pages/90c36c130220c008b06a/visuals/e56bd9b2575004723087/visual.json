@@ -1,13 +1,12 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "e56bd9b2575004723087",
   "position": {
     "x": 1222,
     "y": 2506,
     "z": 18000,
     "height": 492,
-    "width": 586,
-    "tabOrder": 18000
+    "width": 586
   },
   "visual": {
     "visualType": "tableEx",
@@ -27,7 +26,7 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Referred By",
-              "nativeQueryRef": "CF_Referred_To_Us_By"
+              "nativeQueryRef": "Referred By"
             },
             {
               "field": {
@@ -69,7 +68,7 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Conversion Rate",
-              "nativeQueryRef": "Conversion Rate",
+              "nativeQueryRef": "Conv. Rate",
               "format": "0%;-0%;0%"
             },
             {
@@ -98,7 +97,7 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Total Referral Value",
-              "nativeQueryRef": "Total Value"
+              "nativeQueryRef": "Retainer Paid"
             }
           ]
         }
@@ -135,7 +134,7 @@
             "outlineStyle": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "1D"
                 }
               }
             },
@@ -144,7 +143,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#182638'"
+                      "Value": "'#d4b896'"
                     }
                   }
                 }
@@ -160,7 +159,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "11D"
                 }
               }
             },
@@ -168,9 +167,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#3a3a3a'"
                     }
                   }
                 }
@@ -181,16 +179,23 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#222222'"
+                      "Value": "'#e8dcc8'"
                     }
                   }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             },
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'Right'"
+                  "Value": "'Left'"
                 }
               }
             }
@@ -203,7 +208,7 @@
             "gridHorizontal": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
@@ -224,18 +229,7 @@
             "textSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
-                }
-              }
-            },
-            "gridVerticalColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#1E4A6E'"
-                    }
-                  }
+                  "Value": "10D"
                 }
               }
             },
@@ -244,9 +238,27 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#1E4A6E'"
+                      "Value": "'#e0cdb3'"
                     }
                   }
+                }
+              }
+            },
+            "gridVerticalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#e0cdb3'"
+                    }
+                  }
+                }
+              }
+            },
+            "gridHorizontalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             },
@@ -268,7 +280,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#222222'"
+                      "Value": "'#f7f0e0'"
                     }
                   }
                 }
@@ -279,19 +291,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#222222'"
-                    }
-                  }
-                }
-              }
-            },
-            "fontColorSecondary": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                      "Value": "'#f0e8d6'"
                     }
                   }
                 }
@@ -301,9 +301,19 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#444444'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#444444'"
                     }
                   }
                 }
@@ -312,7 +322,56 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "10D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI'', wf_segoe-ui_normal, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#3a3a3a'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#f0ead8'"
+                    }
+                  }
+                }
+              }
+            },
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -390,31 +449,6 @@
             "metadata": "Lawmatics-Prospects-Expanded.Total Referral Value"
           }
         }
-      ],
-      "total": [
-        {
-          "properties": {
-            "outlineStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
       ]
     },
     "visualContainerObjects": {
@@ -426,9 +460,16 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#222222'"
+                      "Value": "'#f7f0e0'"
                     }
                   }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -457,7 +498,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#222222'"
+                      "Value": "'#d4b896'"
                     }
                   }
                 }
@@ -466,7 +507,7 @@
             "width": {
               "expr": {
                 "Literal": {
-                  "Value": "2D"
+                  "Value": "1D"
                 }
               }
             }
@@ -488,7 +529,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#333333'"
+                      "Value": "'#c0a880'"
                     }
                   }
                 }
@@ -504,14 +545,7 @@
             "shadowSpread": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "40D"
+                  "Value": "0D"
                 }
               }
             },
@@ -519,6 +553,13 @@
               "expr": {
                 "Literal": {
                   "Value": "2D"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "70D"
                 }
               }
             }
@@ -538,7 +579,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Referral Partners Performance'"
+                  "Value": "'Referral Partner Performance'"
                 }
               }
             },
@@ -552,7 +593,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "18D"
+                  "Value": "14D"
                 }
               }
             },
@@ -560,9 +601,8 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
+                    "Literal": {
+                      "Value": "'#3a3a3a'"
                     }
                   }
                 }
@@ -586,7 +626,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#FFFFFF'"
+                      "Value": "'#444444'"
                     }
                   }
                 }
@@ -597,7 +637,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#222222'"
+                      "Value": "'#f7f0e0'"
                     }
                   }
                 }
@@ -608,22 +648,9 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#222222'"
+                      "Value": "'#e0cdb3'"
                     }
                   }
-                }
-              }
-            }
-          }
-        }
-      ],
-      "visualTooltip": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }

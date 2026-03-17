@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.0.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmark/2.1.0/schema.json",
   "displayName": "Light Mode",
   "name": "f46565bab00cedbe4991",
   "options": {
@@ -1130,90 +1130,6 @@
                         }
                       },
                       "Property": "created_at"
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          "777feaecbb2ee1861446": {
-            "filters": {
-              "byExpr": [
-                {
-                  "name": "c31cd2b02bc912bb4829",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Lawmatics-Prospects-Expanded"
-                        }
-                      },
-                      "Property": "Total Leads"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "7fdf6e05595dac1c7c27",
-                  "type": "Categorical",
-                  "expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Lawmatics-Prospects-Expanded"
-                        }
-                      },
-                      "Property": "Staff Performance Axis"
-                    }
-                  },
-                  "howCreated": 0
-                },
-                {
-                  "name": "fcc32e06c1a40689ab91",
-                  "type": "Advanced",
-                  "expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Lawmatics-Prospects-Expanded"
-                        }
-                      },
-                      "Property": "Hired"
-                    }
-                  },
-                  "howCreated": 0
-                }
-              ]
-            },
-            "singleVisual": {
-              "visualType": "clusteredBarChart",
-              "objects": {},
-              "orderBy": [
-                {
-                  "Direction": 2,
-                  "Expression": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Lawmatics-Prospects-Expanded"
-                        }
-                      },
-                      "Property": "Total Leads"
-                    }
-                  }
-                }
-              ],
-              "activeProjections": {
-                "Category": [
-                  {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Lawmatics-Prospects-Expanded"
-                        }
-                      },
-                      "Property": "Staff Performance Axis"
                     }
                   }
                 ]

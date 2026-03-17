@@ -1,6 +1,26 @@
 table Clio-Tasks
 	lineageTag: 42a06bed-f4f8-41d9-ab39-8ac48846a860
 
+	measure 'Total Tasks' = COUNTROWS('Clio-Tasks')
+		formatString: 0
+		lineageTag: e1000001-0000-0000-0000-000000000001
+
+	measure 'Pending Tasks' =
+			CALCULATE(
+			    [Total Tasks],
+			    'Clio-Tasks'[Status] = "Pending"
+			)
+		formatString: 0
+		lineageTag: e1000002-0000-0000-0000-000000000002
+
+	measure 'Complete Tasks' =
+			CALCULATE(
+			    [Total Tasks],
+			    'Clio-Tasks'[Status] = "Complete"
+			)
+		formatString: 0
+		lineageTag: e1000003-0000-0000-0000-000000000003
+
 	column Id
 		dataType: int64
 		formatString: 0

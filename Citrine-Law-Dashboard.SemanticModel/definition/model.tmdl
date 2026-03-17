@@ -144,6 +144,8 @@ ref table LocalDateTable_47257c1d-ca87-4573-84c2-b1f76f705303
 ref table LocalDateTable_541f1efb-7149-427d-8a30-fc97d337a014
 ref table LocalDateTable_dde6f80a-3da7-4f92-a631-ca0459d1dcfe
 ref table LocalDateTable_2337dd6b-642d-4790-94dd-303cdb1a4922
+ref table LocalDateTable_e3e23808-18c2-42af-b763-3eb065e61136
+ref table DateTable
 
 ref cultureInfo en-US
 

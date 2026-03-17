@@ -570,3 +570,18 @@ relationship 'Lawmatics-Prospects-Expanded_stage_id_Stage Mapping_StageId'
 	fromColumn: Lawmatics-Prospects-Expanded.stage_id
 	toColumn: 'Stage Mapping'.StageId
 
+relationship ce42ee15-e356-464c-b06c-3d9a856113d5
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Prospects-Expanded.'Start of Month'
+	toColumn: LocalDateTable_e3e23808-18c2-42af-b763-3eb065e61136.Date
+
+relationship f1f1f1f1-0000-0000-0000-000000000001
+	crossFilteringBehavior: bothDirections
+	fromColumn: Clio-DenormalizedMatters.CloseDate
+	toColumn: DateTable.Date
+
+relationship f1f1f1f1-0000-0000-0000-000000000002
+	isActive: false
+	fromColumn: Clio-PIMatterAccruals.MonthDate
+	toColumn: DateTable.Date
+
