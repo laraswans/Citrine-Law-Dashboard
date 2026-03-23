@@ -1,0 +1,49 @@
+{
+  "name": "SunlitEditorial",
+  "dataColors": [
+    "#E8B87A",
+    "#DBAA9E",
+    "#A0C4D2",
+    "#F0D0A0",
+    "#E4C0B4",
+    "#B8D4DE",
+    "#D4A468",
+    "#C8968A",
+    "#88B0C0",
+    "#E8D0B0",
+    "#D0B0A4",
+    "#98BCC8"
+  ],
+  "foreground": "#2F2A27",
+  "foregroundNeutralSecondary": "#8A7E74",
+  "foregroundNeutralTertiary": "#B0A498",
+  "tableAccent": "#E8B87A",
+  "maximum": "#D4A468",
+  "center": "#F0D0A0",
+  "minimum": "#F5F0EA",
+  "hyperlink": "#E09A3E",
+  "background": "#FDF9F5",
+  "backgroundLight": "#F0E8DF",
+  "secondaryBackground": "#F0E8DF",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "*": [
+          {
+            "wordWrap": true
+          }
+        ],
+        "title": [
+          {
+            "fontFamily": "Georgia, 'Times New Roman', serif",
+            "color": {
+              "solid": {
+                "color": "#2F2A27"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

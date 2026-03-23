@@ -1,0 +1,82 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "3b4e6a8c3abd03961ed2",
+  "displayName": "Intake Overview",
+  "displayOption": "ActualSize",
+  "height": 4826,
+  "width": 1920,
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "22D"
+              }
+            }
+          },
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F0E8DF'"
+                  }
+                }
+              }
+            }
+          },
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "244L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "f601aeafb92e6569c17e",
+      "target": "c4732ee5a09c919d6114",
+      "type": "NoFilter"
+    },
+    {
+      "source": "c4732ee5a09c919d6114",
+      "target": "f601aeafb92e6569c17e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "lostleadsummarypie01",
+      "target": "04efa19ded0410719187",
+      "type": "DataFilter"
+    }
+  ]
+}

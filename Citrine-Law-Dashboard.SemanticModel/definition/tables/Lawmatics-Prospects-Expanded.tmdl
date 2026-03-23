@@ -13,7 +13,7 @@ table Lawmatics-Prospects-Expanded
 		formatString: 0
 		lineageTag: 3f7674aa-621e-434e-b0b1-60d61a627769
 
-	measure 'Qualification Rate' = DIVIDE([Qualified Leads], [Qualified Leads] + [Unqualified Leads], 0)
+	measure 'Qualification Rate' = DIVIDE([Qualified Leads], [Total Leads], 0)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 2dd78b64-db8c-4114-a1d1-bf3f59347309
 
@@ -590,6 +590,22 @@ table Lawmatics-Prospects-Expanded
 	measure 'Overall Intake Value' = [YTD Actual Case Value] + [YTD Paid Consults]
 		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: m1000049-0000-0000-0000-000000000049
+
+	/// Count of Lawmatics leads that have a corresponding Clio matter
+	measure 'Leads with Matter' =
+			COUNTROWS(
+			    FILTER(
+			        'Lawmatics-Prospects-Expanded',
+			        COUNTROWS(RELATEDTABLE('Clio-DenormalizedMatters')) > 0
+			    )
+			)
+		formatString: 0
+		lineageTag: m1000050-0000-0000-0000-000000000050
+
+	/// Percentage of total leads that converted to a Clio matter
+	measure 'Match Rate' = DIVIDE([Leads with Matter], [Total Leads], 0)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: m1000051-0000-0000-0000-000000000051
 
 	column id
 		dataType: string
@@ -1646,6 +1662,14 @@ table Lawmatics-Prospects-Expanded
 			RETURN 'Lawmatics-Prospects-Expanded'[source_name] & " (" & FORMAT(StaffRate, "0%") & ")"
 		dataType: string
 		lineageTag: f632a637-3970-4c5e-9a8e-8d2cb05b8852
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Looks up loss category from Stage Mapping (Firm Rejected / Lost to Others / Invalid)
+	column 'Loss Category' = RELATED('Stage Mapping'[LossCategory])
+		dataType: string
+		lineageTag: e1a2b3c4-d5e6-f7a8-b9c0-d1e2f3a4b5c6
 		summarizeBy: none
 
 		annotation SummarizationSetBy = Automatic

@@ -33,6 +33,7 @@ table DateTable
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [MonthName]
+		sortByColumn: MonthStart
 
 		annotation SummarizationSetBy = Automatic
 

@@ -250,6 +250,61 @@ table Clio-DenormalizedMatters
 		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: c1000031-0000-0000-0000-000000000031
 
+	/// Count of Clio matters that matched to a Lawmatics prospect via MatchID
+	measure 'Matched Cases' =
+			COUNTROWS(
+			    FILTER(
+			        'Clio-DenormalizedMatters',
+			        LEFT('Clio-DenormalizedMatters'[MatchID], 9) <> "NO_MATCH_"
+			    )
+			)
+		formatString: 0
+		lineageTag: c1000032-0000-0000-0000-000000000032
+
+	/// Average days from Lawmatics lead creation to Clio matter open date
+	measure 'Avg Days to Hire' =
+			AVERAGEX(
+			    FILTER(
+			        'Clio-DenormalizedMatters',
+			        LEFT('Clio-DenormalizedMatters'[MatchID], 9) <> "NO_MATCH_"
+			            && NOT(ISBLANK('Clio-DenormalizedMatters'[OpenDate]))
+			            && NOT(ISBLANK(RELATED('Lawmatics-Prospects-Expanded'[CreatedDate])))
+			    ),
+			    DATEDIFF(
+			        RELATED('Lawmatics-Prospects-Expanded'[CreatedDate]),
+			        'Clio-DenormalizedMatters'[OpenDate],
+			        DAY
+			    )
+			)
+		formatString: 0
+		lineageTag: c1000033-0000-0000-0000-000000000033
+
+	/// Average estimated case value for matters matched to Lawmatics prospects
+	measure 'Avg Case Value (Matched)' =
+			AVERAGEX(
+			    FILTER(
+			        'Clio-DenormalizedMatters',
+			        LEFT('Clio-DenormalizedMatters'[MatchID], 9) <> "NO_MATCH_"
+			            && NOT(ISBLANK('Clio-DenormalizedMatters'[CF_Current_Estimated_Value]))
+			    ),
+			    'Clio-DenormalizedMatters'[CF_Current_Estimated_Value]
+			)
+		formatString: $#,0
+		lineageTag: c1000034-0000-0000-0000-000000000034
+
+	/// Average actual settlement for matched cases (used in source ROI analysis)
+	measure 'Source Avg Settlement' =
+			AVERAGEX(
+			    FILTER(
+			        'Clio-DenormalizedMatters',
+			        LEFT('Clio-DenormalizedMatters'[MatchID], 9) <> "NO_MATCH_"
+			            && NOT(ISBLANK('Clio-DenormalizedMatters'[CF_Actual_Value]))
+			    ),
+			    'Clio-DenormalizedMatters'[CF_Actual_Value]
+			)
+		formatString: $#,0
+		lineageTag: c1000035-0000-0000-0000-000000000035
+
 	column Id
 		dataType: int64
 		formatString: 0
