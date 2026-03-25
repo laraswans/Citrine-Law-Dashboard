@@ -383,6 +383,20 @@ table Clio-Matters
 
 		annotation UnderlyingDateTimeDataType = Date
 
+	column _skyvia_sync
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 652e4b11-d7c2-425a-b879-1a624facc541
+		summarizeBy: none
+		sourceColumn: _skyvia_sync
+
+		variation Variation
+			isDefault
+			relationship: f462e56e-cbde-4242-9a2a-4b9ff4cd72c8
+			defaultHierarchy: LocalDateTable_8eaf932a-df78-435f-89a0-7e76b3be162b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Clio-Matters = m
 		mode: import
 		source =

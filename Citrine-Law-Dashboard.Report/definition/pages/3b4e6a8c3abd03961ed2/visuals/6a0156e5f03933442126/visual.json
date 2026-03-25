@@ -7,7 +7,7 @@
     "z": 22000,
     "height": 460,
     "width": 600,
-    "tabOrder": 27000
+    "tabOrder": 26000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -235,13 +235,27 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "293.3746710293021D"
+                  "Value": "151.55014538912866D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "Lawmatics-Prospects-Expanded.Total Leads"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "388D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Lawmatics-Prospects-Expanded.Matrix Grouping"
           }
         }
       ],

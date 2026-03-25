@@ -298,45 +298,15 @@ relationship b34c56d3-9ebb-4ec9-a144-9dfc24c93a00
 	fromColumn: Clio-Tasks-Expanded.custom_reference_date
 	toColumn: LocalDateTable_ecbf5653-fa2c-4289-8a68-cf5966c78d02.Date
 
-relationship 93fcac2a-2cea-49bf-aa7f-3b4049a7d0a4
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Clio-Bills.IssuedDate
-	toColumn: LocalDateTable_c5ed9d72-393c-4eae-9de7-a180a099bf22.Date
-
 relationship 00c29c46-ad5d-4741-bdf8-ac276811c681
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Clio-Bills.CreatedDate
 	toColumn: LocalDateTable_4ddde534-0154-4c5d-9ea7-770a36dc3d7b.Date
 
-relationship 978daae9-b975-430f-8f00-4a52b531234c
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Clio-Bills.DueDate
-	toColumn: LocalDateTable_0fcf6927-02d4-44d1-a773-ed8a2f17fca4.Date
-
 relationship c85a3235-bc21-435e-88f3-eb82747e4c6e
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Clio-Bills.UpdatedDate
 	toColumn: LocalDateTable_9657888b-c5f4-4ead-b4c5-2627e10508e7.Date
-
-relationship 32da86ec-4a6d-489c-a231-19bd576ae4f4
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Clio-Bills.StartDate
-	toColumn: LocalDateTable_4a94f609-40c1-45e1-a370-f9b26b7b622e.Date
-
-relationship 4f46bedb-08ec-4e06-b772-3da356acb212
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Clio-Bills.EndDate
-	toColumn: LocalDateTable_c82f550a-e9bf-42de-b50d-784ed72c6966.Date
-
-relationship 1bd2779d-1e6a-47c3-b54a-8f8c936405b3
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Clio-Bills.PaidDate
-	toColumn: LocalDateTable_5d890986-aa8a-466f-95aa-0cdd5c6088c0.Date
-
-relationship bd47b1f6-2664-45d9-bdc8-b3e6df940b3e
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Clio-Bills.LastSentDate
-	toColumn: LocalDateTable_3143d2b6-8052-41fc-9de5-ac1ad0c05886.Date
 
 relationship b042baa4-36aa-405d-b2f3-e4ebcda1ced2
 	joinOnDateBehavior: datePartOnly
@@ -584,4 +554,94 @@ relationship f1f1f1f1-0000-0000-0000-000000000002
 	isActive: false
 	fromColumn: Clio-PIMatterAccruals.MonthDate
 	toColumn: DateTable.Date
+
+relationship bfa3b922-dfa1-4c1b-b1ac-29d987d357e6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Prospects-Expanded.created_at
+	toColumn: LocalDateTable_e25f14dc-e2d6-42ad-bf1f-dc11aecb57b1.Date
+
+relationship e5801948-23e0-42b2-94e8-985f3e570709
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Prospects-Expanded.updated_at
+	toColumn: LocalDateTable_0872b08a-1795-4f98-bcc5-b4c9e6a1c17a.Date
+
+relationship 9a511598-330b-44f7-9b08-c2c9e8ec1fea
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-DenormalizedContacts._skyvia_sync
+	toColumn: LocalDateTable_ec679b3a-7feb-4598-ba45-07283be56077.Date
+
+relationship 944e267b-6a5d-4655-856b-440a53179116
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-DenormalizedMatters._skyvia_sync
+	toColumn: LocalDateTable_b9cbaf3e-5cc0-4c92-86b4-ee9e94711f77.Date
+
+relationship 0b787134-111f-4b84-83c5-5dec21db02d0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Tasks-Expanded._skyvia_sync
+	toColumn: LocalDateTable_6c38f1a2-4592-4981-abd7-d8223d4c7c6a.Date
+
+relationship 25fd90ce-4a6d-49f1-8aba-373b3ec0c4f9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Bills.IssuedAt
+	toColumn: LocalDateTable_88441ee9-a6e1-40a4-955d-76832f861705.Date
+
+relationship b684eba3-42fd-4ba1-b771-442da7665056
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Bills.DueAt
+	toColumn: LocalDateTable_2cf2a2f6-7fcc-4b6f-9111-c6b1a550f398.Date
+
+relationship cc448418-73a3-406b-ba1e-e89a0057df9b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Bills.StartAt
+	toColumn: LocalDateTable_2cd1d37f-66b7-497e-a7ee-8ff5642697d7.Date
+
+relationship 6e33a3a9-dcaf-4e98-b9de-ca90c94a21af
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Bills.EndAt
+	toColumn: LocalDateTable_bd83bec5-1955-48a6-9ec5-3091b02a35db.Date
+
+relationship c40070a2-084f-470a-8d29-8114508a51a6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Bills.PaidAt
+	toColumn: LocalDateTable_3c155b9b-1804-4a8b-bbee-15750280eaf6.Date
+
+relationship 3980f2f3-f135-450b-ad73-ce6c279bd330
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Bills.LastSentAt
+	toColumn: LocalDateTable_05207766-4fcc-48e2-ae0a-613bd4c8dcb4.Date
+
+relationship 11e52732-f73f-4c40-966c-596e85e2685e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Bills._skyvia_sync
+	toColumn: LocalDateTable_b7a09d23-c1c5-44c4-959f-e66739699e0a.Date
+
+relationship a55805d3-e94d-475b-9212-a569a3389e7b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-ContactCustomFieldValues._skyvia_sync
+	toColumn: LocalDateTable_c718f13a-a8f0-403d-b892-6090500b541f.Date
+
+relationship 0437d342-690f-4b6e-915b-717704798a2b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-MatterCustomFieldValues._skyvia_sync
+	toColumn: LocalDateTable_34e61b1e-5170-4c23-9fd2-2056b7dbddcf.Date
+
+relationship aa449fcd-7e12-441a-b307-7cf5b0b818a7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Contacts._skyvia_sync
+	toColumn: LocalDateTable_778821df-6cff-4741-a3e5-ccaa6d43db2a.Date
+
+relationship f462e56e-cbde-4242-9a2a-4b9ff4cd72c8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Matters._skyvia_sync
+	toColumn: LocalDateTable_8eaf932a-df78-435f-89a0-7e76b3be162b.Date
+
+relationship fa9d1e5f-2249-43f1-8934-70c3f0286d6b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Users._skyvia_sync
+	toColumn: LocalDateTable_4a7bd14e-3f40-434d-9824-2600beae90ae.Date
+
+relationship 1f5139c4-598d-4058-a79a-6ecf53774234
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-Tasks._skyvia_sync
+	toColumn: LocalDateTable_497c6c6c-2753-47dc-9ca1-b6e0effa3845.Date
 

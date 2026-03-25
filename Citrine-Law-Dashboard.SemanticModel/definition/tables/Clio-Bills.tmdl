@@ -26,22 +26,6 @@ table Clio-Bills
 
 		annotation SummarizationSetBy = Automatic
 
-	column IssuedDate
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 77434d27-6f8a-4be2-b7bd-d6672dcef2ee
-		summarizeBy: none
-		sourceColumn: IssuedDate
-
-		variation Variation
-			isDefault
-			relationship: 93fcac2a-2cea-49bf-aa7f-3b4049a7d0a4
-			defaultHierarchy: LocalDateTable_c5ed9d72-393c-4eae-9de7-a180a099bf22.'Date Hierarchy'
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
 	column CreatedDate
 		dataType: dateTime
 		formatString: General Date
@@ -55,22 +39,6 @@ table Clio-Bills
 			defaultHierarchy: LocalDateTable_4ddde534-0154-4c5d-9ea7-770a36dc3d7b.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
-
-	column DueDate
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 52d91118-9823-4392-9734-7dfe0c64f8ed
-		summarizeBy: none
-		sourceColumn: DueDate
-
-		variation Variation
-			isDefault
-			relationship: 978daae9-b975-430f-8f00-4a52b531234c
-			defaultHierarchy: LocalDateTable_0fcf6927-02d4-44d1-a773-ed8a2f17fca4.'Date Hierarchy'
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
 
 	column TaxRate
 		dataType: double
@@ -138,38 +106,6 @@ table Clio-Bills
 
 		annotation SummarizationSetBy = Automatic
 
-	column StartDate
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 9f70dd5a-a341-4ce1-a9aa-b5d77911a533
-		summarizeBy: none
-		sourceColumn: StartDate
-
-		variation Variation
-			isDefault
-			relationship: 32da86ec-4a6d-489c-a231-19bd576ae4f4
-			defaultHierarchy: LocalDateTable_4a94f609-40c1-45e1-a370-f9b26b7b622e.'Date Hierarchy'
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
-	column EndDate
-		dataType: dateTime
-		formatString: Long Date
-		lineageTag: 7256ee6d-edc9-40c1-974f-d8799f586c33
-		summarizeBy: none
-		sourceColumn: EndDate
-
-		variation Variation
-			isDefault
-			relationship: 4f46bedb-08ec-4e06-b772-3da356acb212
-			defaultHierarchy: LocalDateTable_c82f550a-e9bf-42de-b50d-784ed72c6966.'Date Hierarchy'
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation UnderlyingDateTimeDataType = Date
-
 	column Balance
 		dataType: double
 		lineageTag: 34423556-0c9a-4cea-b06c-847745f75e53
@@ -215,20 +151,6 @@ table Clio-Bills
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column PaidDate
-		dataType: dateTime
-		formatString: General Date
-		lineageTag: 1096c052-d12b-4622-988f-f216fcce8db7
-		summarizeBy: none
-		sourceColumn: PaidDate
-
-		variation Variation
-			isDefault
-			relationship: 1bd2779d-1e6a-47c3-b54a-8f8c936405b3
-			defaultHierarchy: LocalDateTable_5d890986-aa8a-466f-95aa-0cdd5c6088c0.'Date Hierarchy'
-
-		annotation SummarizationSetBy = Automatic
 
 	column Pending
 		dataType: double
@@ -283,20 +205,6 @@ table Clio-Bills
 		lineageTag: 10070a14-1bd0-42ee-acf4-52ac2cc171fe
 		summarizeBy: none
 		sourceColumn: Shared
-
-		annotation SummarizationSetBy = Automatic
-
-	column LastSentDate
-		dataType: dateTime
-		formatString: General Date
-		lineageTag: 9b7f976b-3e79-457f-98fd-10a456d7a9bb
-		summarizeBy: none
-		sourceColumn: LastSentDate
-
-		variation Variation
-			isDefault
-			relationship: bd47b1f6-2664-45d9-bdc8-b3e6df940b3e
-			defaultHierarchy: LocalDateTable_3143d2b6-8052-41fc-9de5-ac1ad0c05886.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -423,21 +331,319 @@ table Clio-Bills
 
 		annotation SummarizationSetBy = Automatic
 
-	column MatterId
-		dataType: int64
-		formatString: 0
-		lineageTag: b37cf530-578a-460e-802f-c583146979d4
-		summarizeBy: count
-		sourceColumn: MatterId
+	column IssuedAt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c90e9bc7-b5d8-49bb-9068-8f22b08c7892
+		summarizeBy: none
+		sourceColumn: IssuedAt
+
+		variation Variation
+			isDefault
+			relationship: 25fd90ce-4a6d-49f1-8aba-373b3ec0c4f9
+			defaultHierarchy: LocalDateTable_88441ee9-a6e1-40a4-955d-76832f861705.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
-	column OverdueOnly
-		dataType: boolean
-		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: 2ba91c00-0595-4f13-b08c-52ffd3e98fb7
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DueAt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9dfa0a3b-ee25-4820-8188-7673451a30f1
 		summarizeBy: none
-		sourceColumn: OverdueOnly
+		sourceColumn: DueAt
+
+		variation Variation
+			isDefault
+			relationship: b684eba3-42fd-4ba1-b771-442da7665056
+			defaultHierarchy: LocalDateTable_2cf2a2f6-7fcc-4b6f-9111-c6b1a550f398.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column StartAt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5e5946a5-7b4a-486d-aeba-98bf26026183
+		summarizeBy: none
+		sourceColumn: StartAt
+
+		variation Variation
+			isDefault
+			relationship: cc448418-73a3-406b-ba1e-e89a0057df9b
+			defaultHierarchy: LocalDateTable_2cd1d37f-66b7-497e-a7ee-8ff5642697d7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column EndAt
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 4ac3cee7-3495-4ed2-aca7-aa7635710739
+		summarizeBy: none
+		sourceColumn: EndAt
+
+		variation Variation
+			isDefault
+			relationship: 6e33a3a9-dcaf-4e98-b9de-ca90c94a21af
+			defaultHierarchy: LocalDateTable_bd83bec5-1955-48a6-9ec5-3091b02a35db.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PaidAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 244edf10-d010-443c-8ef4-333f53cccfac
+		summarizeBy: none
+		sourceColumn: PaidAt
+
+		variation Variation
+			isDefault
+			relationship: c40070a2-084f-470a-8d29-8114508a51a6
+			defaultHierarchy: LocalDateTable_3c155b9b-1804-4a8b-bbee-15750280eaf6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastSentAt
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d9cc6e55-da47-45fc-9246-976341b1d4e4
+		summarizeBy: none
+		sourceColumn: LastSentAt
+
+		variation Variation
+			isDefault
+			relationship: 3980f2f3-f135-450b-ad73-ce6c279bd330
+			defaultHierarchy: LocalDateTable_05207766-4fcc-48e2-ae0a-613bd4c8dcb4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column AvailableStateTransitions
+		dataType: string
+		lineageTag: 2e7421ba-4f9f-43c0-9a42-b635f64a3bbc
+		summarizeBy: none
+		sourceColumn: AvailableStateTransitions
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserId
+		dataType: int64
+		formatString: 0
+		lineageTag: 7458d669-cba5-4906-a852-3ace4b5d30cc
+		summarizeBy: count
+		sourceColumn: UserId
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserName
+		dataType: string
+		lineageTag: fcc91e25-c410-4467-abfe-a498952cb57b
+		summarizeBy: none
+		sourceColumn: UserName
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscountRate
+		dataType: double
+		lineageTag: 98801f86-ef99-415b-8ebe-dfdcb6e93db8
+		summarizeBy: sum
+		sourceColumn: DiscountRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DiscountType
+		dataType: string
+		lineageTag: 5087ba1b-efc3-4449-aa13-1c76b2c876e2
+		summarizeBy: none
+		sourceColumn: DiscountType
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscountNote
+		dataType: string
+		lineageTag: 3d588f60-7961-4d62-bf24-20d8ff6a3d09
+		summarizeBy: none
+		sourceColumn: DiscountNote
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscountEarlyPaymentRate
+		dataType: double
+		lineageTag: 6845fe11-b8e3-4715-8e52-49589c44207d
+		summarizeBy: sum
+		sourceColumn: DiscountEarlyPaymentRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DiscountEarlyPaymentPeriod
+		dataType: int64
+		formatString: 0
+		lineageTag: 991eb892-a2fa-4b58-9714-a5c592abb0f3
+		summarizeBy: sum
+		sourceColumn: DiscountEarlyPaymentPeriod
+
+		annotation SummarizationSetBy = Automatic
+
+	column InterestBalance
+		dataType: double
+		lineageTag: caf3d909-f8ed-42eb-9789-7e30c0e07738
+		summarizeBy: sum
+		sourceColumn: InterestBalance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column InterestPeriod
+		dataType: int64
+		formatString: 0
+		lineageTag: b4189a15-63e8-4eb4-bcbd-778f289e7b14
+		summarizeBy: sum
+		sourceColumn: InterestPeriod
+
+		annotation SummarizationSetBy = Automatic
+
+	column InterestRate
+		dataType: double
+		lineageTag: 56c70e21-cfcf-473e-aca6-38d24bf6754f
+		summarizeBy: sum
+		sourceColumn: InterestRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column InterestTotal
+		dataType: double
+		lineageTag: 6dadda18-0606-408a-ac21-f82688042711
+		summarizeBy: sum
+		sourceColumn: InterestTotal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column InterestType
+		dataType: string
+		lineageTag: 24a40063-86dc-49bb-83cd-3018207966e6
+		summarizeBy: none
+		sourceColumn: InterestType
+
+		annotation SummarizationSetBy = Automatic
+
+	column GroupId
+		dataType: int64
+		formatString: 0
+		lineageTag: 60e6b71b-fc64-4590-ac2c-7ef9d49673b8
+		summarizeBy: count
+		sourceColumn: GroupId
+
+		annotation SummarizationSetBy = Automatic
+
+	column GroupName
+		dataType: string
+		lineageTag: e7555665-852d-412e-9eca-98c8afd4315f
+		summarizeBy: none
+		sourceColumn: GroupName
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillThemeId
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e2a9645-c55b-4eb6-92dc-4ecbad2ac736
+		summarizeBy: count
+		sourceColumn: BillThemeId
+
+		annotation SummarizationSetBy = Automatic
+
+	column BillThemeName
+		dataType: string
+		lineageTag: df89373e-bba2-4197-9178-05c4d1380e05
+		summarizeBy: none
+		sourceColumn: BillThemeName
+
+		annotation SummarizationSetBy = Automatic
+
+	column OriginalBillId
+		dataType: int64
+		formatString: 0
+		lineageTag: f3a809a7-b53b-47d4-99f2-ab8bc09fa1f3
+		summarizeBy: count
+		sourceColumn: OriginalBillId
+
+		annotation SummarizationSetBy = Automatic
+
+	column OriginalBillNumber
+		dataType: string
+		lineageTag: cf156a9f-ae5b-4d4b-9033-97ab7faf3efc
+		summarizeBy: none
+		sourceColumn: OriginalBillNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DestinationAccountId
+		dataType: int64
+		formatString: 0
+		lineageTag: f71d810e-a0cc-4ec0-ba44-d23c2959eeec
+		summarizeBy: count
+		sourceColumn: DestinationAccountId
+
+		annotation SummarizationSetBy = Automatic
+
+	column DestinationAccountName
+		dataType: string
+		lineageTag: c15591fa-1f8b-44c6-9a59-f4685d8dc0d8
+		summarizeBy: none
+		sourceColumn: DestinationAccountName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyId
+		dataType: int64
+		formatString: 0
+		lineageTag: 9e0fddfd-dec5-4d5f-9794-aa2edcbd680d
+		summarizeBy: count
+		sourceColumn: CurrencyId
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyCode
+		dataType: string
+		lineageTag: 486ca053-01dc-4fa0-a4a4-39591740330c
+		summarizeBy: none
+		sourceColumn: CurrencyCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencySign
+		dataType: string
+		lineageTag: 5ec42cf9-71ef-47ea-b39b-816cda2f2cd5
+		summarizeBy: none
+		sourceColumn: CurrencySign
+
+		annotation SummarizationSetBy = Automatic
+
+	column _skyvia_sync
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 54d4bb83-c74d-494f-a269-750b01b2fcb7
+		summarizeBy: none
+		sourceColumn: _skyvia_sync
+
+		variation Variation
+			isDefault
+			relationship: 11e52732-f73f-4c40-966c-596e85e2685e
+			defaultHierarchy: LocalDateTable_b7a09d23-c1c5-44c4-959f-e66739699e0a.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

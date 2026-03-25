@@ -171,6 +171,14 @@ table Lawmatics-Prospects
 
 		annotation SummarizationSetBy = Automatic
 
+	column campaign_id
+		dataType: string
+		lineageTag: f7cb36d6-c1d2-4ffe-9414-d8b797bb9c76
+		summarizeBy: none
+		sourceColumn: campaign_id
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Lawmatics-Prospects = m
 		mode: import
 		source =

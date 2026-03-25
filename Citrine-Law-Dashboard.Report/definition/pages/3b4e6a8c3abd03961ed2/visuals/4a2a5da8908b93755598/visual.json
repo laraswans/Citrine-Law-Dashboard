@@ -7,7 +7,7 @@
     "z": 11000,
     "height": 378,
     "width": 600,
-    "tabOrder": 32000
+    "tabOrder": 31000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -133,7 +133,7 @@
                     "Entity": "Lawmatics-Prospects-Expanded"
                   }
                 },
-                "Property": "Total Leads"
+                "Property": "Hired"
               }
             },
             "direction": "Descending"

@@ -1674,6 +1674,50 @@ table Lawmatics-Prospects-Expanded
 
 		annotation SummarizationSetBy = Automatic
 
+	column campaign_id
+		dataType: string
+		lineageTag: 7772b8e6-69fb-4639-8a74-a7a2c4f06eba
+		summarizeBy: none
+		sourceColumn: campaign_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column campaign_name
+		dataType: string
+		lineageTag: 6d0ff611-d205-44d6-9038-387e849d30f1
+		summarizeBy: none
+		sourceColumn: campaign_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bad75a39-027a-45c7-a5c2-984e29cecc85
+		summarizeBy: none
+		sourceColumn: created_at
+
+		variation Variation
+			isDefault
+			relationship: bfa3b922-dfa1-4c1b-b1ac-29d987d357e6
+			defaultHierarchy: LocalDateTable_e25f14dc-e2d6-42ad-bf1f-dc11aecb57b1.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column updated_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b9af3bba-1161-4e65-b61f-bd7b754e141d
+		summarizeBy: none
+		sourceColumn: updated_at
+
+		variation Variation
+			isDefault
+			relationship: e5801948-23e0-42b2-94e8-985f3e570709
+			defaultHierarchy: LocalDateTable_0872b08a-1795-4f98-bcc5-b4c9e6a1c17a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Lawmatics-Prospects-Expanded = m
 		mode: import
 		source =
@@ -1685,5 +1729,5 @@ table Lawmatics-Prospects-Expanded
 				in
 				    #"Prospects-Expanded_View"
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 

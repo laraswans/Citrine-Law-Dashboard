@@ -120,6 +120,20 @@ table Clio-ContactCustomFieldValues
 
 		annotation SummarizationSetBy = Automatic
 
+	column _skyvia_sync
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fa57f7ac-49a1-48c2-b363-7b79ea24b486
+		summarizeBy: none
+		sourceColumn: _skyvia_sync
+
+		variation Variation
+			isDefault
+			relationship: a55805d3-e94d-475b-9212-a569a3389e7b
+			defaultHierarchy: LocalDateTable_c718f13a-a8f0-403d-b892-6090500b541f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Clio-ContactCustomFieldValues = m
 		mode: import
 		source =

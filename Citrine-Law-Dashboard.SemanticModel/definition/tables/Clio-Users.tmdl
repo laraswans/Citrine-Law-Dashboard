@@ -46,147 +46,161 @@ table Clio-Users
 
 		annotation SummarizationSetBy = Automatic
 
-	column account_owner
+	column AccountOwner
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: d8b9340b-8a4c-41c1-a3c0-aeac9a6d9bbf
+		lineageTag: 254f7374-f44f-4074-b756-de613f129b26
 		summarizeBy: none
-		sourceColumn: account_owner
+		sourceColumn: AccountOwner
 
 		annotation SummarizationSetBy = Automatic
 
-	column clio_connect
+	column ClioConnect
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: 47d81cc9-0ff3-46fc-920a-a8312fa97518
+		lineageTag: 645d9dff-5e46-4bbd-bf18-10e39f3e003b
 		summarizeBy: none
-		sourceColumn: clio_connect
+		sourceColumn: ClioConnect
 
 		annotation SummarizationSetBy = Automatic
 
-	column court_rules_default_attendee
+	column CourtRulesDefaultAttendee
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: 796cb47e-3ffb-4d0b-83bd-699103c821db
+		lineageTag: baad1ce4-53a9-4d0d-9688-57865e01d9b6
 		summarizeBy: none
-		sourceColumn: court_rules_default_attendee
+		sourceColumn: CourtRulesDefaultAttendee
 
 		annotation SummarizationSetBy = Automatic
 
-	column default_calendar_id
+	column DefaultCalendarId
 		dataType: int64
 		formatString: 0
-		lineageTag: 60c05a94-fbdf-4dab-971a-7fe0cec3cbfc
-		summarizeBy: sum
-		sourceColumn: default_calendar_id
+		lineageTag: 4c1436b4-7e95-46bb-ad79-eb0c96c21196
+		summarizeBy: count
+		sourceColumn: DefaultCalendarId
 
 		annotation SummarizationSetBy = Automatic
 
-	column email
+	column Email
 		dataType: string
-		lineageTag: ca9e2700-f8f4-4809-8d43-b3008e11c4e0
+		lineageTag: 80b3add6-4767-4890-91a4-f8fd1f363ed0
 		summarizeBy: none
-		sourceColumn: email
+		sourceColumn: Email
 
 		annotation SummarizationSetBy = Automatic
 
-	column enabled
+	column Enabled
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: def7848b-a5f0-4e30-a3b4-63748cd30cbf
+		lineageTag: 72dc4044-ea40-40f3-a9bd-6b4473167c86
 		summarizeBy: none
-		sourceColumn: enabled
+		sourceColumn: Enabled
 
 		annotation SummarizationSetBy = Automatic
 
-	column first_name
+	column FirstName
 		dataType: string
-		lineageTag: ae7e0067-318b-4589-886c-c50e2e368265
+		lineageTag: e392845b-b214-4bb0-9372-7c8084cdc4c1
 		summarizeBy: none
-		sourceColumn: first_name
+		sourceColumn: FirstName
 
 		annotation SummarizationSetBy = Automatic
 
-	column initials
+	column Initials
 		dataType: string
-		lineageTag: 62ca805c-05e6-4d67-a254-b4c7a8c337f2
+		lineageTag: 86015e00-dbff-4792-9998-286bb61abcce
 		summarizeBy: none
-		sourceColumn: initials
+		sourceColumn: Initials
 
 		annotation SummarizationSetBy = Automatic
 
-	column last_name
+	column LastName
 		dataType: string
-		lineageTag: e1638c18-1985-4de5-8ff4-64d627493c67
+		lineageTag: 535b6255-bba7-4fd4-8349-cfc3c7691c42
 		summarizeBy: none
-		sourceColumn: last_name
+		sourceColumn: LastName
 
 		annotation SummarizationSetBy = Automatic
 
-	column name
+	column Name
 		dataType: string
-		lineageTag: 3b835960-ff27-4fd6-b484-052096953883
+		lineageTag: 43b9378a-e56b-40b7-ab16-bb18dff99b09
 		summarizeBy: none
-		sourceColumn: name
+		sourceColumn: Name
 
 		annotation SummarizationSetBy = Automatic
 
-	column phone_number
+	column PhoneNumber
 		dataType: string
-		lineageTag: 4deb197b-adae-4b5b-8cd1-50539d37ec6a
+		lineageTag: 2bb2db2c-83a9-493b-b2b4-16e7cfd26a22
 		summarizeBy: none
-		sourceColumn: phone_number
+		sourceColumn: PhoneNumber
 
 		annotation SummarizationSetBy = Automatic
 
-	column rate
+	column Rate
 		dataType: double
-		lineageTag: 94dd5507-baaa-4052-b831-afa052027770
+		lineageTag: 97c6b81d-db16-438e-a077-9b3208fbc8f6
 		summarizeBy: sum
-		sourceColumn: rate
+		sourceColumn: Rate
 
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column roles
+	column Roles
 		dataType: string
-		lineageTag: 868126e3-ec38-4e89-81fe-e16195ecb01d
+		lineageTag: 344b13e8-e70c-452a-a3b5-6014f7528acc
 		summarizeBy: none
-		sourceColumn: roles
+		sourceColumn: Roles
 
 		annotation SummarizationSetBy = Automatic
 
-	column subscription_type
+	column SubscriptionType
 		dataType: string
-		lineageTag: 9c4f918e-4547-41f5-9bd0-979788a0cd87
+		lineageTag: 776ad518-a4c7-4e71-9493-3e6b13038af0
 		summarizeBy: none
-		sourceColumn: subscription_type
+		sourceColumn: SubscriptionType
 
 		annotation SummarizationSetBy = Automatic
 
-	column time_zone
+	column TimeZone
 		dataType: string
-		lineageTag: e67c2372-6a71-4718-a568-4316856b987d
+		lineageTag: af962bea-2605-48f1-8861-404321c7d771
 		summarizeBy: none
-		sourceColumn: time_zone
+		sourceColumn: TimeZone
 
 		annotation SummarizationSetBy = Automatic
 
-	column contact
+	column Contact
 		dataType: int64
 		formatString: 0
-		lineageTag: c2de5e54-8ef1-47d2-be43-b892cf6cbfa3
+		lineageTag: 9b749711-c251-4c25-ab5e-3ef99814e8fa
 		summarizeBy: sum
-		sourceColumn: contact
+		sourceColumn: Contact
 
 		annotation SummarizationSetBy = Automatic
 
-	column job_title
+	column JobTitle
 		dataType: string
-		lineageTag: 10c739fe-cfc0-4843-a8ec-693f8be5ba44
+		lineageTag: 610beef0-8410-4d77-8198-c4b9f5f07efc
 		summarizeBy: none
-		sourceColumn: job_title
+		sourceColumn: JobTitle
+
+		annotation SummarizationSetBy = Automatic
+
+	column _skyvia_sync
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 76b76994-da08-45f6-a1ba-bb0d7b437b21
+		summarizeBy: none
+		sourceColumn: _skyvia_sync
+
+		variation Variation
+			isDefault
+			relationship: fa9d1e5f-2249-43f1-8934-70c3f0286d6b
+			defaultHierarchy: LocalDateTable_4a7bd14e-3f40-434d-9824-2600beae90ae.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

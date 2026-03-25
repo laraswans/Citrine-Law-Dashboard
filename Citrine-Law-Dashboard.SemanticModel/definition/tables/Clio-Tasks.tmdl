@@ -232,6 +232,20 @@ table Clio-Tasks
 
 		annotation SummarizationSetBy = Automatic
 
+	column _skyvia_sync
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 36ac9e0f-9e00-4ec3-81fc-a44f7075adc3
+		summarizeBy: none
+		sourceColumn: _skyvia_sync
+
+		variation Variation
+			isDefault
+			relationship: 1f5139c4-598d-4058-a79a-6ecf53774234
+			defaultHierarchy: LocalDateTable_497c6c6c-2753-47dc-9ca1-b6e0effa3845.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Clio-Tasks = m
 		mode: import
 		source =

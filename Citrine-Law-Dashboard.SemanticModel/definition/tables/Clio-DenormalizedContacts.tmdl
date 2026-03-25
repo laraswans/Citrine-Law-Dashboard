@@ -277,6 +277,20 @@ table Clio-DenormalizedContacts
 
 		annotation SummarizationSetBy = Automatic
 
+	column _skyvia_sync
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e80d4c92-714e-45a5-ac21-52ee548c7a83
+		summarizeBy: none
+		sourceColumn: _skyvia_sync
+
+		variation Variation
+			isDefault
+			relationship: 9a511598-330b-44f7-9b08-c2c9e8ec1fea
+			defaultHierarchy: LocalDateTable_ec679b3a-7feb-4598-ba45-07283be56077.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Clio-DenormalizedContacts = m
 		mode: import
 		source =

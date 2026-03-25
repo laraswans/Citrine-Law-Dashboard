@@ -7,7 +7,7 @@
     "z": 10000,
     "height": 400,
     "width": 700,
-    "tabOrder": 9000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "funnel",
@@ -59,6 +59,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Lawmatics-Prospects-Expanded"
+                  }
+                },
+                "Property": "Hired"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
       }
     },
     "objects": {

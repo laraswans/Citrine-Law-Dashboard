@@ -120,6 +120,20 @@ table Clio-MatterCustomFieldValues
 
 		annotation SummarizationSetBy = Automatic
 
+	column _skyvia_sync
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: fa249cdc-f7ff-4935-8a26-4b1d460bab40
+		summarizeBy: none
+		sourceColumn: _skyvia_sync
+
+		variation Variation
+			isDefault
+			relationship: 0437d342-690f-4b6e-915b-717704798a2b
+			defaultHierarchy: LocalDateTable_34e61b1e-5170-4c23-9fd2-2056b7dbddcf.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Clio-MatterCustomFieldValues = m
 		mode: import
 		source =

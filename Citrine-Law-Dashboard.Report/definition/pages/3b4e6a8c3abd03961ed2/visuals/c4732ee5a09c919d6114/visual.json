@@ -7,7 +7,7 @@
     "z": 12000,
     "height": 112,
     "width": 450,
-    "tabOrder": 25000
+    "tabOrder": 24000
   },
   "visual": {
     "visualType": "slicer",
@@ -80,7 +80,7 @@
             "relativePeriod": {
               "expr": {
                 "Literal": {
-                  "Value": "'Months'"
+                  "Value": "'Years'"
                 }
               }
             }
@@ -154,7 +154,7 @@
                                   }
                                 },
                                 "Amount": -1,
-                                "TimeUnit": 2
+                                "TimeUnit": 3
                               }
                             },
                             "TimeUnit": 0

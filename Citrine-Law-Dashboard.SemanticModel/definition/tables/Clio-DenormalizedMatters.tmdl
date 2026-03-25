@@ -1655,12 +1655,28 @@ table Clio-DenormalizedMatters
 	column CloseYearMonthSort = IF(NOT(ISBLANK([CloseDate])), (3000 - YEAR([CloseDate])) * 100 - MONTH([CloseDate]), BLANK())
 		dataType: double
 		lineageTag: b1000005-0000-0000-0000-000000000005
-		summarizeBy: none
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
 
 	column ClosedInCurrentQuarter = IF([CloseDate] >= DATE(YEAR(TODAY()), CEILING(MONTH(TODAY()), 3) - 2, 1) && [CloseDate] <= EOMONTH(DATE(YEAR(TODAY()), CEILING(MONTH(TODAY()), 3), 1), 0), "Yes", "No")
 		dataType: string
 		lineageTag: b1000006-0000-0000-0000-000000000006
 		summarizeBy: none
+
+	column _skyvia_sync
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d0567616-9d42-4cf7-b0f6-eb6474e6ca1e
+		summarizeBy: none
+		sourceColumn: _skyvia_sync
+
+		variation Variation
+			isDefault
+			relationship: 944e267b-6a5d-4655-856b-440a53179116
+			defaultHierarchy: LocalDateTable_b9cbaf3e-5cc0-4c92-86b4-ee9e94711f77.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
 
 	partition Clio-DenormalizedMatters = m
 		mode: import

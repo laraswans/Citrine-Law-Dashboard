@@ -438,48 +438,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "826151120314733af55a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Clio-DenormalizedMatters"
-              }
-            },
-            "Property": "Source Avg Settlement"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f5346a74183ac409d236",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Clio-DenormalizedMatters"
-              }
-            },
-            "Property": "Matched Cases"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ab096ec6160d6222c7d4",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Clio-DenormalizedMatters"
-              }
-            },
-            "Property": "Gross Settlement"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

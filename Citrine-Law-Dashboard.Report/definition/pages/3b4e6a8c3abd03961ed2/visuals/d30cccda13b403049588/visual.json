@@ -7,7 +7,7 @@
     "z": 19000,
     "height": 300,
     "width": 1072,
-    "tabOrder": 33000
+    "tabOrder": 32000
   },
   "visual": {
     "visualType": "barChart",
@@ -23,11 +23,11 @@
                       "Entity": "Lawmatics-Prospects-Expanded"
                     }
                   },
-                  "Property": "CF_Referred_To_Us_By"
+                  "Property": "campaign_name"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Referred By",
-              "nativeQueryRef": "Referred By",
+              "queryRef": "Lawmatics-Prospects-Expanded.campaign_name",
+              "nativeQueryRef": "campaign_name1",
               "active": true
             }
           ]
@@ -66,6 +66,25 @@
         },
         "Y": {
           "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lawmatics-Prospects-Expanded"
+                        }
+                      },
+                      "Property": "campaign_name"
+                    }
+                  },
+                  "Function": 5
+                }
+              },
+              "queryRef": "CountNonNull(Lawmatics-Prospects-Expanded.campaign_name)",
+              "nativeQueryRef": "campaign_name"
+            },
             {
               "field": {
                 "Measure": {
@@ -198,6 +217,13 @@
               "expr": {
                 "Literal": {
                   "Value": "12D"
+                }
+              }
+            },
+            "labelOverflow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
@@ -380,7 +406,8 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "4260f2a0d069a5064547",
+        "name": "cf1e7fa402700d5ecabc",
+        "ordinal": 0,
         "field": {
           "Column": {
             "Expression": {
@@ -388,7 +415,117 @@
                 "Entity": "Lawmatics-Prospects-Expanded"
               }
             },
-            "Property": "CF_Referred_To_Us_By"
+            "Property": "campaign_name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d01f5266f1fd8124f08e",
+        "ordinal": 1,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Lawmatics-Prospects-Expanded"
+              }
+            },
+            "Property": "Conversion Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cb084debce39d98b4072",
+        "ordinal": 2,
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Lawmatics-Prospects-Expanded"
+                  }
+                },
+                "Property": "campaign_name"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "2d38da65418dd97ef12f",
+        "ordinal": 3,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Lawmatics-Prospects-Expanded"
+              }
+            },
+            "Property": "Did Not Hire"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "16dff80fc5084de6e663",
+        "ordinal": 4,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Lawmatics-Prospects-Expanded"
+              }
+            },
+            "Property": "Hired"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8f1a73532e7abd6b4bd3",
+        "ordinal": 5,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Lawmatics-Prospects-Expanded"
+              }
+            },
+            "Property": "Intake"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "98e482a17ea8405ed015",
+        "ordinal": 6,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Lawmatics-Prospects-Expanded"
+              }
+            },
+            "Property": "Total Leads"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dffac16cd07e650e3e76",
+        "ordinal": 7,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Lawmatics-Prospects-Expanded"
+              }
+            },
+            "Property": "source_name"
           }
         },
         "type": "Categorical",
@@ -396,7 +533,7 @@
           "Version": 2,
           "From": [
             {
-              "Name": "q",
+              "Name": "l",
               "Entity": "Lawmatics-Prospects-Expanded",
               "Type": 0
             }
@@ -404,53 +541,43 @@
           "Where": [
             {
               "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "q"
-                              }
-                            },
-                            "Property": "CF_Referred_To_Us_By"
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "l"
                           }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "''"
-                            }
-                          }
-                        ]
-                      ]
+                        },
+                        "Property": "source_name"
+                      }
                     }
-                  }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'General Referrals'"
+                        }
+                      }
+                    ]
+                  ]
                 }
               }
             }
           ]
         },
+        "howCreated": "User",
         "objects": {
           "general": [
             {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
+              "properties": {}
             }
           ]
         }
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }
