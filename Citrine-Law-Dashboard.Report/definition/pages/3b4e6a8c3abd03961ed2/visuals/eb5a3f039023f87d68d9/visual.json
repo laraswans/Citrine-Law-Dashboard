@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.practice_area_name",
-              "nativeQueryRef": "practice_area_name1",
-              "active": true
+              "nativeQueryRef": "P. Area",
+              "active": true,
+              "displayName": "P. Area"
             }
           ]
         },
@@ -94,6 +95,20 @@
               "expr": {
                 "Literal": {
                   "Value": "12D"
+                }
+              }
+            },
+            "labelStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Data value, percent of total'"
+                }
+              }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'preferOutside'"
                 }
               }
             }

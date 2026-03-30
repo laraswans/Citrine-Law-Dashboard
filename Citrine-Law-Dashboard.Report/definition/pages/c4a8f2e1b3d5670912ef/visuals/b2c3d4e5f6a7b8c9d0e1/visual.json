@@ -60,7 +60,8 @@
                 }
               },
               "queryRef": "Clio-PIMatterAccruals.Diff - Accrued Amount This Month",
-              "nativeQueryRef": "Diff - Accrued Amount This Month"
+              "nativeQueryRef": "Gross Accrued Amount This Month",
+              "displayName": "Gross Accrued Amount This Month"
             }
           ]
         }

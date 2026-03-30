@@ -1,0 +1,162 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "912fa593c5578e5d747c",
+  "displayName": "Duplicate of Intake Overview",
+  "displayOption": "ActualSize",
+  "height": 4826,
+  "width": 1920,
+  "pageBinding": {
+    "name": "06572dd74eefb0e70493",
+    "type": "Default",
+    "parameters": []
+  },
+  "objects": {
+    "background": [
+      {
+        "properties": {
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "22D"
+              }
+            }
+          },
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#F0E8DF'"
+                  }
+                }
+              }
+            }
+          },
+          "image": {
+            "image": {
+              "name": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              },
+              "url": {
+                "expr": {
+                  "Literal": {
+                    "Value": "''"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "244L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "8fcfebeed4ae12c5c40b",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "3ae93c160a17d099cb19",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "22e6e5785896b476fb86",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "6fc28fed55ee2f338c13",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "59778d73b1d436676516",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "8f470050b924b01c6134",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "a743be7b5fd69edca16a",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "1528c0364f8c4619e6fd",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "f3dab6cf3615c6bc5d86",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "925ae26079ec4a195c03",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "ea6418c9ed8df6ca9ba6",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "efec502f9a514f2b65c5",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "41e7e751bcb8de17e6b8",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "0346d600c77f1abfef7c",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "70af20d16714125a9035",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "1d29fdf1b7bb891844f2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "a2a703f3732d569e95d3",
+      "type": "NoFilter"
+    },
+    {
+      "source": "a1f36ab4a55b6dd6213f",
+      "target": "f3dab6cf3615c6bc5d86",
+      "type": "HighlightFilter"
+    }
+  ]
+}

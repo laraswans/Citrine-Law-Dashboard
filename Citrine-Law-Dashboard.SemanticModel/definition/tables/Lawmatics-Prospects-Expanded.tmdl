@@ -18,8 +18,10 @@ table Lawmatics-Prospects-Expanded
 		lineageTag: 2dd78b64-db8c-4114-a1d1-bf3f59347309
 
 	measure 'Total Value' = SUM('Lawmatics-Prospects-Expanded'[Value])
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		formatString: \$#,0.0;(\$#,0.0);\$#,0.0
 		lineageTag: b477ed40-5747-448d-8db8-a38a8f0c89f0
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	measure 'Median Value' = MEDIAN('Lawmatics-Prospects-Expanded'[Value])
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
@@ -606,6 +608,15 @@ table Lawmatics-Prospects-Expanded
 	measure 'Match Rate' = DIVIDE([Leads with Matter], [Total Leads], 0)
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: m1000051-0000-0000-0000-000000000051
+
+	measure Measure
+		lineageTag: b06844ca-7ada-4712-bf46-2a3ac9ef9182
+
+	measure 'Open in Lawmatics' = "Open in Lawmatics"
+		lineageTag: e3bd7e97-85c4-427f-b751-f23e721b2ece
+
+	measure 'Lawmatics URL' = "https://app.lawmatics.com/matters/" & SELECTEDVALUE('Lawmatics-Prospects-Expanded'[Id]) & "/activities"
+		lineageTag: 3b06606a-327d-4bc3-b24f-08b2ea588163
 
 	column id
 		dataType: string
@@ -1520,7 +1531,7 @@ table Lawmatics-Prospects-Expanded
 
 	column CreatedDate
 		dataType: dateTime
-		formatString: General Date
+		formatString: m/d/yyyy
 		lineageTag: 45788dea-b674-403f-aa5c-313f639a2ae5
 		summarizeBy: none
 		sourceColumn: CreatedDate
@@ -1531,6 +1542,8 @@ table Lawmatics-Prospects-Expanded
 			defaultHierarchy: LocalDateTable_102cefeb-6447-4d70-8c68-f41eeeb26b71.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column UpdatedDate
 		dataType: dateTime
@@ -1718,6 +1731,30 @@ table Lawmatics-Prospects-Expanded
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Clio URL' =
+			
+			IF(
+			    NOT ISBLANK(RELATED('Clio-DenormalizedMatters'[id])),
+			    "https://app.clio.com/nc/#/matters/" & RELATED('Clio-DenormalizedMatters'[id]),
+			    BLANK()
+			)
+		lineageTag: cf69ae56-318a-414e-b62a-293382090854
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Open in Clio' =
+			
+			IF(
+			    NOT ISBLANK(RELATED('Clio-DenormalizedMatters'[id])),
+			    "Open in Clio",
+			    BLANK()
+			)
+		lineageTag: 9d12f587-0294-42a0-88aa-93754f7f86ba
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Lawmatics-Prospects-Expanded = m
 		mode: import
 		source =
@@ -1730,4 +1767,6 @@ table Lawmatics-Prospects-Expanded
 				    #"Prospects-Expanded_View"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

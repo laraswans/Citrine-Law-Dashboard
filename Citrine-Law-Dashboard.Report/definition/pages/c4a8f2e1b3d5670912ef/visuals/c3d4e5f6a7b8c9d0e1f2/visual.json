@@ -60,7 +60,8 @@
                 }
               },
               "queryRef": "Clio-PIMatterAccruals.Diff - Accrued Balance",
-              "nativeQueryRef": "Diff - Accrued Balance"
+              "nativeQueryRef": "Gross Accrued Balance",
+              "displayName": "Gross Accrued Balance"
             }
           ]
         }

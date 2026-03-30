@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Matter Source 1",
-              "nativeQueryRef": "Lead Source",
-              "active": true
+              "nativeQueryRef": "Source Name",
+              "active": true,
+              "displayName": "Source Name"
             },
             {
               "field": {
@@ -89,8 +90,24 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Conversion Rate",
-              "nativeQueryRef": "Conv. Rate",
+              "nativeQueryRef": "Conv Rate",
+              "displayName": "Conv Rate",
               "format": "0.00%;-0.00%;0.00%"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Lawmatics-Prospects-Expanded"
+                    }
+                  },
+                  "Property": "Qualification Rate"
+                }
+              },
+              "queryRef": "Lawmatics-Prospects-Expanded.Qualification Rate",
+              "nativeQueryRef": "Qualif Rate",
+              "displayName": "Qualif Rate"
             },
             {
               "field": {
@@ -133,7 +150,7 @@
                     "Entity": "Lawmatics-Prospects-Expanded"
                   }
                 },
-                "Property": "Hired"
+                "Property": "Median Value"
               }
             },
             "direction": "Descending"
@@ -292,7 +309,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "96.62383438251545D"
+                  "Value": "72.52757430784551D"
                 }
               }
             }
@@ -320,7 +337,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "70.20909615273025D"
+                  "Value": "52.260379374421206D"
                 }
               }
             }
@@ -334,7 +351,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "136.74364942792064D"
+                  "Value": "152.7743648576904D"
                 }
               }
             }
@@ -348,7 +365,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "97.00000071302748D"
+                  "Value": "81.00000071302748D"
                 }
               }
             }
@@ -362,13 +379,27 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "103.00000013672751D"
+                  "Value": "83.00000013672751D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "Lawmatics-Prospects-Expanded.Total Value"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "65D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Lawmatics-Prospects-Expanded.Qualification Rate"
           }
         }
       ],
@@ -530,6 +561,13 @@
                         [
                           {
                             "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
                               "Value": "'DO NOT USE - WILL DELETE MATTER. AUTOMATION PURPOSE ONLY - NOT REAL SOURCE (Main Line)'"
                             }
                           }
@@ -537,7 +575,7 @@
                         [
                           {
                             "Literal": {
-                              "Value": "null"
+                              "Value": "'x DO NOT USE - WILL DELETE MATTER. AUTOMATION PURPOSE ONLY - NOT REAL SOURCE (Main Line)'"
                             }
                           }
                         ]

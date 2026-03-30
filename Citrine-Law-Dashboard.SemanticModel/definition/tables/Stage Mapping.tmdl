@@ -24,32 +24,48 @@ table 'Stage Mapping'
 	column StageId
 		dataType: string
 		lineageTag: 5acc0840-137c-4807-aa4d-3692c90ed224
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [StageId]
 
+		annotation SummarizationSetBy = Automatic
+
 	column StageName
 		lineageTag: 0c80ad88-69cf-4495-95dd-c16eee135a7f
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [StageName]
 
+		annotation SummarizationSetBy = Automatic
+
 	column MainStatus
 		lineageTag: def01e32-945d-44ba-a7b9-706891415543
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [MainStatus]
 
+		annotation SummarizationSetBy = Automatic
+
 	column SortOrder
+		formatString: 0
 		lineageTag: b2d34750-52f9-4911-9b2f-10662c6faf83
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [SortOrder]
 
+		annotation SummarizationSetBy = Automatic
+
 	column LossCategory
 		lineageTag: a3b4c5d6-e7f8-9a0b-c1d2-e3f4a5b6c7d8
+		summarizeBy: none
 		isNameInferred
 		sourceColumn: [LossCategory]
 
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Stage Mapping' = calculated
 		mode: import
-		source =
+		source = ```
 				DATATABLE(
 				    "StageId", STRING,
 				    "StageName", STRING,
@@ -75,21 +91,21 @@ table 'Stage Mapping'
 				        {"128697", "Attorney / Law Firm Communication", "Intake", 2, BLANK()},
 				        {"150250", "Paid Consultation F/U", "Intake", 2, BLANK()},
 				        {"130387", "PI Attorney Disqual - Bad ROI / Facts / Other", "Did Not Hire", 3, "Firm Rejected"},
-				        {"126754", "PNC Early Exit - Pre Consult", "Did Not Hire", 3, "Lost to Others"},
-				        {"109390", "Unresponsive Pre-Consult", "Did Not Hire", 3, "Lost to Others"},
-				        {"103973", "Declined to Pay for JV/ Preind Cons", "Did Not Hire", 3, "Invalid"},
-				        {"128960", "PNC Cancelled Consult", "Did Not Hire", 3, "Lost to Others"},
-				        {"125538", "DNH - No Complaint/Charges Filed", "Did Not Hire", 3, "Lost to Others"},
-				        {"121351", "DNH - Info Gathering / Attorney Shopping", "Did Not Hire", 3, "Lost to Others"},
+				        {"126754", "PNC Early Exit - Pre Consult", "Did Not Hire", 3, "Did not Hire"},
+				        {"109390", "Unresponsive Pre-Consult", "Did Not Hire", 3, "Did not Hire"},
+				        {"103973", "Declined to Pay for JV/ Preind Cons", "Did Not Hire", 3, "Firm Rejected"},
+				        {"128960", "PNC Cancelled Consult", "Did Not Hire", 3, "Did not Hire"},
+				        {"125538", "DNH - No Complaint/Charges Filed", "Did Not Hire", 3, "Did not Hire"},
+				        {"121351", "DNH - Info Gathering / Attorney Shopping", "Did Not Hire", 3, "Did not Hire"},
 				        {"120764", "Wrong Number - For Other Attorney Office", "Did Not Hire", 3, "Invalid"},
-				        {"120590", "DNH - No Longer Needs Assistance", "Did Not Hire", 3, "Lost to Others"},
+				        {"120590", "DNH - No Longer Needs Assistance", "Did Not Hire", 3, "Did not Hire"},
 				        {"119903", "Invalid LSA Contact - SMB", "Did Not Hire", 3, "Invalid"},
-				        {"119901", "LA Lost - Customer Service", "Did Not Hire", 3, "Lost to Others"},
-				        {"119900", "LA Lost - No Follow Up", "Did Not Hire", 3, "Lost to Others"},
+				        {"119901", "LA Lost - Customer Service", "Did Not Hire", 3, "Did not Hire"},
+				        {"119900", "LA Lost - No Follow Up", "Did Not Hire", 3, "Did not Hire"},
 				        {"119873", "REJ - Liability/Coverage Issue", "Did Not Hire", 3, "Firm Rejected"},
 				        {"119872", "REJ - Injuries/Treatment Issue", "Did Not Hire", 3, "Firm Rejected"},
 				        {"119850", "REJ - Difficult PNC/ Unstable", "Did Not Hire", 3, "Firm Rejected"},
-				        {"119616", "DNH - Cont with Appointed/Current Attorney", "Did Not Hire", 3, "Lost to Others"},
+				        {"119616", "DNH - Cont with Appointed/Current Attorney", "Did Not Hire", 3, "Did not Hire"},
 				        {"119615", "REJ - SOL/ Case DL / Timing Issue", "Did Not Hire", 3, "Firm Rejected"},
 				        {"119581", "REJ - Travel Issue", "Did Not Hire", 3, "Firm Rejected"},
 				        {"119278", "REJ - Out of State", "Did Not Hire", 3, "Firm Rejected"},
@@ -101,20 +117,22 @@ table 'Stage Mapping'
 				        {"106080", "Personal Calls", "Did Not Hire", 3, "Invalid"},
 				        {"105966", "Court Personnel", "Did Not Hire", 3, "Invalid"},
 				        {"105912", "Abandoned call", "Did Not Hire", 3, "Invalid"},
-				        {"105560", "RE: Current/Former Client", "Did Not Hire", 3, "Invalid"},
-				        {"105501", "LA Lost - Wrong Information", "Did Not Hire", 3, "Lost to Others"},
+				        {"105560", "RE: Current/Former Client", "Did Not Hire", 3, "Firm Rejected"},
+				        {"105501", "LA Lost - Wrong Information", "Did Not Hire", 3, "Did not Hire"},
 				        {"105500", "Marketing / Spam", "Did Not Hire", 3, "Invalid"},
 				        {"102578", "REJ - Schedule Conflict Issue", "Did Not Hire", 3, "Firm Rejected"},
-				        {"102577", "Did not Hire- Other", "Did Not Hire", 3, "Invalid"},
+				        {"102577", "Did not Hire- Other", "Did Not Hire", 3, "Firm Rejected"},
 				        {"120995", "Citrine Office Vendor/Test", "Did Not Hire", 3, "Invalid"},
-				        {"102574", "Attorney Coverage Representation", "Did Not Hire", 3, "Invalid"},
-				        {"102494", "DNH - Cost Concerns", "Did Not Hire", 3, "Lost to Others"},
-				        {"102576", "DNH - Hired Other Attorney", "Did Not Hire", 3, "Lost to Others"},
-				        {"102573", "DNH - Unresponsive Post-Consult", "Did Not Hire", 3, "Lost to Others"},
+				        {"102574", "Attorney Coverage Representation", "Did Not Hire", 3, "Firm Rejected"},
+				        {"102494", "DNH - Cost Concerns", "Did Not Hire", 3, "Did not Hire"},
+				        {"102576", "DNH - Hired Other Attorney", "Did Not Hire", 3, "Did not Hire"},
+				        {"102573", "DNH - Unresponsive Post-Consult", "Did Not Hire", 3, "Did not Hire"},
 				        {"116017", "Invalid Caller - Other", "Did Not Hire", 3, "Invalid"},
-				        {"102571", "Other - Referred Out", "Did Not Hire", 3, "Lost to Others"},
+				        {"102571", "Other - Referred Out", "Did Not Hire", 3, "Did not Hire"},
 				        {"153951", "REJ - Conflict of Interest", "Did Not Hire", 3, "Firm Rejected"},
 				        {"102575", "Rejected - Other", "Did Not Hire", 3, "Firm Rejected"}
 				    }
 				)
+				
+				```
 

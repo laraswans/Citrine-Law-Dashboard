@@ -27,21 +27,8 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.CreatedDate",
-              "nativeQueryRef": "Date Created"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
-                    }
-                  },
-                  "Property": "id"
-                }
-              },
-              "queryRef": "Lawmatics-Prospects-Expanded.id",
-              "nativeQueryRef": "ID"
+              "nativeQueryRef": "Created Date",
+              "displayName": "Created Date"
             },
             {
               "field": {
@@ -55,21 +42,8 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.name",
-              "nativeQueryRef": "Client Name"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
-                    }
-                  },
-                  "Property": "last_name"
-                }
-              },
-              "queryRef": "Lawmatics-Prospects-Expanded.last_name",
-              "nativeQueryRef": "Last Name"
+              "nativeQueryRef": "Full Name",
+              "displayName": "Full Name"
             },
             {
               "field": {
@@ -83,35 +57,8 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.practice_area_name",
-              "nativeQueryRef": "Practice Area"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
-                    }
-                  },
-                  "Property": "email"
-                }
-              },
-              "queryRef": "Lawmatics-Prospects-Expanded.email",
-              "nativeQueryRef": "Email"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
-                    }
-                  },
-                  "Property": "phone"
-                }
-              },
-              "queryRef": "Lawmatics-Prospects-Expanded.phone",
-              "nativeQueryRef": "Phone"
+              "nativeQueryRef": "Practice Area",
+              "displayName": "Practice Area"
             },
             {
               "field": {
@@ -125,7 +72,8 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.source_name",
-              "nativeQueryRef": "Lead Source"
+              "nativeQueryRef": "Source",
+              "displayName": "Source"
             },
             {
               "field": {
@@ -139,7 +87,66 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.stage_name",
-              "nativeQueryRef": "Stage"
+              "nativeQueryRef": "Stage",
+              "displayName": "Stage"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Lawmatics-Prospects-Expanded"
+                    }
+                  },
+                  "Property": "phone"
+                }
+              },
+              "queryRef": "Lawmatics-Prospects-Expanded.phone",
+              "nativeQueryRef": "Phone",
+              "displayName": "Phone"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Lawmatics-Prospects-Expanded"
+                    }
+                  },
+                  "Property": "email"
+                }
+              },
+              "queryRef": "Lawmatics-Prospects-Expanded.email",
+              "nativeQueryRef": "Email",
+              "displayName": "Email"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Lawmatics-Prospects-Expanded"
+                    }
+                  },
+                  "Property": "Open in Lawmatics"
+                }
+              },
+              "queryRef": "Lawmatics-Prospects-Expanded.Open in Lawmatics",
+              "nativeQueryRef": "Open in Lawmatics"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Lawmatics-Prospects-Expanded"
+                    }
+                  },
+                  "Property": "Open in Clio"
+                }
+              },
+              "queryRef": "Lawmatics-Prospects-Expanded.Open in Clio",
+              "nativeQueryRef": "Open in Clio"
             }
           ]
         }
@@ -154,10 +161,10 @@
                     "Entity": "Lawmatics-Prospects-Expanded"
                   }
                 },
-                "Property": "CreatedDate"
+                "Property": "name"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ]
       }
@@ -251,22 +258,6 @@
           }
         }
       ],
-      "columnWidth": [
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "133.28571060046113D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Lawmatics-Prospects-Expanded.last_name"
-          }
-        }
-      ],
       "values": [
         {
           "properties": {
@@ -277,6 +268,211 @@
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Lawmatics-Prospects-Expanded.CreatedDate"
+          }
+        },
+        {
+          "properties": {
+            "webURL": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Lawmatics-Prospects-Expanded"
+                    }
+                  },
+                  "Property": "Lawmatics URL"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Measure": {
+                                  "Expression": {
+                                    "SourceRef": {
+                                      "Entity": "Lawmatics-Prospects-Expanded"
+                                    }
+                                  },
+                                  "Property": "Open in Lawmatics"
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'Open in Lawmatics'"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#447793'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Lawmatics-Prospects-Expanded.Open in Lawmatics"
+          }
+        },
+        {
+          "properties": {
+            "webURL": {
+              "expr": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Lawmatics-Prospects-Expanded"
+                        }
+                      },
+                      "Property": "Clio URL"
+                    }
+                  },
+                  "Function": 3
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Conditional": {
+                      "Cases": [
+                        {
+                          "Condition": {
+                            "Comparison": {
+                              "ComparisonKind": 0,
+                              "Left": {
+                                "Aggregation": {
+                                  "Expression": {
+                                    "Column": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "Lawmatics-Prospects-Expanded"
+                                        }
+                                      },
+                                      "Property": "Open in Clio"
+                                    }
+                                  },
+                                  "Function": 3
+                                }
+                              },
+                              "Right": {
+                                "Literal": {
+                                  "Value": "'Open in Clio'"
+                                }
+                              }
+                            },
+                            "Annotations": {
+                              "PowerBI.SQExprEvaluationKind": 1,
+                              "PowerBI.SQExprTextOperatorOption": 2
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#447793'"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ],
+            "metadata": "Lawmatics-Prospects-Expanded.Open in Clio"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "285D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Lawmatics-Prospects-Expanded.source_name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "129D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Lawmatics-Prospects-Expanded.name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "170D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Lawmatics-Prospects-Expanded.email"
           }
         }
       ]

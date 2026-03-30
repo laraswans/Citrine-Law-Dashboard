@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Referred By",
-              "nativeQueryRef": "Referred By"
+              "nativeQueryRef": "Referred To Us By",
+              "displayName": "Referred To Us By"
             },
             {
               "field": {
@@ -69,8 +70,24 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Conversion Rate",
-              "nativeQueryRef": "Conv. Rate",
+              "nativeQueryRef": "Conv Rate",
+              "displayName": "Conv Rate",
               "format": "0%;-0%;0%"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Lawmatics-Prospects-Expanded"
+                    }
+                  },
+                  "Property": "Qualification Rate"
+                }
+              },
+              "queryRef": "Lawmatics-Prospects-Expanded.Qualification Rate",
+              "nativeQueryRef": "Qualif Rate",
+              "displayName": "Qualif Rate"
             },
             {
               "field": {
@@ -216,7 +233,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "125.8867052588692D"
+                  "Value": "169.9303993998821D"
                 }
               }
             }
@@ -230,7 +247,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "73.7869435590469D"
+                  "Value": "57.7381468730221D"
                 }
               }
             }
@@ -244,7 +261,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "95.22230226983375D"
+                  "Value": "61.29818570703048D"
                 }
               }
             }
@@ -279,6 +296,34 @@
           },
           "selector": {
             "metadata": "Lawmatics-Prospects-Expanded.Total Referral Value"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "64D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Lawmatics-Prospects-Expanded.Qualification Rate"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Lawmatics-Prospects-Expanded.Hired"
           }
         }
       ],

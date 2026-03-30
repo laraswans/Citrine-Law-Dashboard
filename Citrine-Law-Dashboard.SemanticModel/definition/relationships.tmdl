@@ -535,11 +535,6 @@ relationship 9cb3b090-2857-444a-8986-8ccb981303b4
 	fromColumn: Lawmatics-Users.UpdatedDate
 	toColumn: LocalDateTable_2337dd6b-642d-4790-94dd-303cdb1a4922.Date
 
-relationship 'Lawmatics-Prospects-Expanded_stage_id_Stage Mapping_StageId'
-	crossFilteringBehavior: bothDirections
-	fromColumn: Lawmatics-Prospects-Expanded.stage_id
-	toColumn: 'Stage Mapping'.StageId
-
 relationship ce42ee15-e356-464c-b06c-3d9a856113d5
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Lawmatics-Prospects-Expanded.'Start of Month'
@@ -644,4 +639,9 @@ relationship 1f5139c4-598d-4058-a79a-6ecf53774234
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Clio-Tasks._skyvia_sync
 	toColumn: LocalDateTable_497c6c6c-2753-47dc-9ca1-b6e0effa3845.Date
+
+relationship 'Lawmatics-Prospects-Expanded_stage_id_Stage Mapping_StageId'
+	crossFilteringBehavior: bothDirections
+	fromColumn: Lawmatics-Prospects-Expanded.stage_id
+	toColumn: 'Stage Mapping'.StageId
 

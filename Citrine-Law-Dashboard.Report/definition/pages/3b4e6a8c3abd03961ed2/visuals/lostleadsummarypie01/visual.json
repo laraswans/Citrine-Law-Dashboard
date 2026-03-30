@@ -84,7 +84,7 @@
             "labelStyle": {
               "expr": {
                 "Literal": {
-                  "Value": "'Both'"
+                  "Value": "'Data value, percent of total'"
                 }
               }
             },
@@ -268,6 +268,48 @@
                     "Right": {
                       "Literal": {
                         "Value": "'Invalid'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 6,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Lawmatics-Prospects-Expanded"
+                          }
+                        },
+                        "Property": "Loss Category"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Did not Hire'"
                       }
                     }
                   }

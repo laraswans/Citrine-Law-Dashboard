@@ -60,7 +60,8 @@
                 }
               },
               "queryRef": "Clio-PIMatterAccruals.Diff - Payment Amount This Month",
-              "nativeQueryRef": "Diff - Payment Amount This Month"
+              "nativeQueryRef": "Gross Payment Amount This Month",
+              "displayName": "Gross Payment Amount This Month"
             }
           ]
         }

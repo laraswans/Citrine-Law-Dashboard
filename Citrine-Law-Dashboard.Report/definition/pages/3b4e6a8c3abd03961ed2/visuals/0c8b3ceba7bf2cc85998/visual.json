@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.practice_area_name",
-              "nativeQueryRef": "Practice Area",
-              "active": true
+              "nativeQueryRef": "P. Area",
+              "active": true,
+              "displayName": "P. Area"
             }
           ]
         },

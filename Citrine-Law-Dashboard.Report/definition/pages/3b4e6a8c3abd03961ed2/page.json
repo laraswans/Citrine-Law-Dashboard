@@ -5,6 +5,11 @@
   "displayOption": "ActualSize",
   "height": 4826,
   "width": 1920,
+  "pageBinding": {
+    "name": "9ce3ad9b35cff79d41cc",
+    "type": "Default",
+    "parameters": []
+  },
   "objects": {
     "background": [
       {
@@ -232,6 +237,16 @@
       "source": "219173f02f977ae72f14",
       "target": "c4732ee5a09c919d6114",
       "type": "NoFilter"
+    },
+    {
+      "source": "1dedc219e7e12f180ad8",
+      "target": "5d836085662a24a937d2",
+      "type": "HighlightFilter"
+    },
+    {
+      "source": "04efa19ded0410719187",
+      "target": "ad415dcbc379f31b96a9",
+      "type": "HighlightFilter"
     }
   ]
 }

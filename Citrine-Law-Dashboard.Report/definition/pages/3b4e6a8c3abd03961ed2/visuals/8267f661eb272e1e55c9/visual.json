@@ -28,7 +28,8 @@
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Matter Type",
               "nativeQueryRef": "Practice Area",
-              "active": true
+              "active": true,
+              "displayName": "Practice Area"
             }
           ]
         },
@@ -74,8 +75,24 @@
                 }
               },
               "queryRef": "Lawmatics-Prospects-Expanded.Conversion Rate",
-              "nativeQueryRef": "Conv. Rate",
+              "nativeQueryRef": "Conv Rate",
+              "displayName": "Conv Rate",
               "format": "0.00%;-0.00%;0.00%"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Lawmatics-Prospects-Expanded"
+                    }
+                  },
+                  "Property": "Qualification Rate"
+                }
+              },
+              "queryRef": "Lawmatics-Prospects-Expanded.Qualification Rate",
+              "nativeQueryRef": "Qualif Rate",
+              "displayName": "Qualif Rate"
             },
             {
               "field": {
@@ -118,7 +135,7 @@
                     "Entity": "Lawmatics-Prospects-Expanded"
                   }
                 },
-                "Property": "Total Leads"
+                "Property": "Qualification Rate"
               }
             },
             "direction": "Descending"
@@ -241,7 +258,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "89.59729885928559D"
+                  "Value": "69.51637161745367D"
                 }
               }
             }
@@ -255,7 +272,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "164.71624483251563D"
+                  "Value": "136.6673733552148D"
                 }
               }
             }
@@ -276,6 +293,48 @@
           },
           "selector": {
             "metadata": "Lawmatics-Prospects-Expanded.Total Leads"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "74D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Lawmatics-Prospects-Expanded.Qualification Rate"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Lawmatics-Prospects-Expanded.Median Value"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "100D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Lawmatics-Prospects-Expanded.Total Value"
           }
         }
       ],
