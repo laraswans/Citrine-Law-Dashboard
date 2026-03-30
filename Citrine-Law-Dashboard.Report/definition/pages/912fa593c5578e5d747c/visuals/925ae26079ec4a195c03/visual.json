@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "925ae26079ec4a195c03",
   "position": {
-    "x": 112,
-    "y": 392,
-    "z": 30000,
-    "height": 460,
-    "width": 1072,
-    "tabOrder": 27000
+    "x": 916,
+    "y": 248,
+    "z": 8000,
+    "height": 530,
+    "width": 888,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "pieChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Stage Mapping"
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "MainStatus"
+                  "Property": "PracticeAreaName"
                 }
               },
-              "queryRef": "Stage Mapping.MainStatus",
-              "nativeQueryRef": "MainStatus",
+              "queryRef": "Clio-DenormalizedMatters.PracticeAreaName",
+              "nativeQueryRef": "PracticeAreaName",
               "active": true
             }
           ]
@@ -99,14 +99,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "Total Leads"
+                  "Property": "Open Matters"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Total Leads",
-              "nativeQueryRef": "Total Leads"
+              "queryRef": "Clio-DenormalizedMatters.Open Matters",
+              "nativeQueryRef": "Open Matters"
             }
           ]
         }
@@ -118,10 +118,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Lawmatics-Prospects-Expanded"
+                    "Entity": "Clio-DenormalizedMatters"
                   }
                 },
-                "Property": "Total Leads"
+                "Property": "Open Matters"
               }
             },
             "direction": "Descending"
@@ -414,7 +414,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Lead Status Breakdown'"
+                  "Value": "'Open Cases by Practice Area'"
                 }
               }
             }
@@ -470,5 +470,95 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5f08521058b680d5f91f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Clio-DenormalizedMatters"
+              }
+            },
+            "Property": "PracticeAreaName"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "Clio-DenormalizedMatters",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "c"
+                              }
+                            },
+                            "Property": "PracticeAreaName"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'ADMIN'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'OFFICE OPERATIONS'"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
   }
 }

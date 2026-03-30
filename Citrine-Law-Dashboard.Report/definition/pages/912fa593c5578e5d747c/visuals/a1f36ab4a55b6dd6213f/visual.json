@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "a1f36ab4a55b6dd6213f",
   "position": {
-    "x": 112,
-    "y": 4254,
-    "z": 42500,
+    "x": 108,
+    "y": 1594,
+    "z": 11000,
     "height": 492,
     "width": 1696,
-    "tabOrder": 30000
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "tableEx",
@@ -20,132 +20,126 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
+                    }
+                  },
+                  "Property": "DisplayNumber"
+                }
+              },
+              "queryRef": "Clio-DenormalizedMatters.DisplayNumber",
+              "nativeQueryRef": "DisplayNumber"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
                   "Property": "CreatedDate"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.CreatedDate",
-              "nativeQueryRef": "Created Date",
-              "displayName": "Created Date"
+              "queryRef": "Clio-DenormalizedMatters.CreatedDate",
+              "nativeQueryRef": "CreatedDate"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "name"
+                  "Property": "Status"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.name",
-              "nativeQueryRef": "Full Name",
-              "displayName": "Full Name"
+              "queryRef": "Clio-DenormalizedMatters.Status",
+              "nativeQueryRef": "Status"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "practice_area_name"
+                  "Property": "PracticeAreaName"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.practice_area_name",
-              "nativeQueryRef": "Practice Area",
-              "displayName": "Practice Area"
+              "queryRef": "Clio-DenormalizedMatters.PracticeAreaName",
+              "nativeQueryRef": "PracticeAreaName"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "source_name"
+                  "Property": "ResponsibleAttorneyName"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.source_name",
-              "nativeQueryRef": "Source",
-              "displayName": "Source"
+              "queryRef": "Clio-DenormalizedMatters.ResponsibleAttorneyName",
+              "nativeQueryRef": "ResponsibleAttorneyName"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "stage_name"
+                  "Property": "MatterStageName"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.stage_name",
-              "nativeQueryRef": "Stage",
-              "displayName": "Stage"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
-                    }
-                  },
-                  "Property": "phone"
-                }
-              },
-              "queryRef": "Lawmatics-Prospects-Expanded.phone",
-              "nativeQueryRef": "Phone",
-              "displayName": "Phone"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
-                    }
-                  },
-                  "Property": "email"
-                }
-              },
-              "queryRef": "Lawmatics-Prospects-Expanded.email",
-              "nativeQueryRef": "Email",
-              "displayName": "Email"
+              "queryRef": "Clio-DenormalizedMatters.MatterStageName",
+              "nativeQueryRef": "MatterStageName"
             },
             {
               "field": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "Open in Lawmatics"
+                  "Property": "Estimated Case Value"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Open in Lawmatics",
-              "nativeQueryRef": "Open in Lawmatics"
+              "queryRef": "Clio-DenormalizedMatters.Estimated Case Value",
+              "nativeQueryRef": "Estimated Case Value"
             },
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
+                    }
+                  },
+                  "Property": "CF_Actual_Value"
+                }
+              },
+              "queryRef": "Sum(Clio-DenormalizedMatters.CF_Actual_Value)",
+              "nativeQueryRef": "Actual Value",
+              "displayName": "Actual Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
                   "Property": "Open in Clio"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Open in Clio",
+              "queryRef": "Clio-DenormalizedMatters.Open in Clio",
               "nativeQueryRef": "Open in Clio"
             }
           ]
@@ -158,13 +152,13 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Lawmatics-Prospects-Expanded"
+                    "Entity": "Clio-DenormalizedMatters"
                   }
                 },
-                "Property": "name"
+                "Property": "CreatedDate"
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -271,29 +265,16 @@
           }
         },
         {
-          "properties": {},
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "metadata": "Lawmatics-Prospects-Expanded.CreatedDate"
-          }
-        },
-        {
           "properties": {
             "webURL": {
               "expr": {
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "Lawmatics URL"
+                  "Property": "Clio URL"
                 }
               }
             },
@@ -311,89 +292,10 @@
                                 "Measure": {
                                   "Expression": {
                                     "SourceRef": {
-                                      "Entity": "Lawmatics-Prospects-Expanded"
+                                      "Entity": "Clio-DenormalizedMatters"
                                     }
                                   },
-                                  "Property": "Open in Lawmatics"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "'Open in Lawmatics'"
-                                }
-                              }
-                            },
-                            "Annotations": {
-                              "PowerBI.SQExprEvaluationKind": 1,
-                              "PowerBI.SQExprTextOperatorOption": 2
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#447793'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "metadata": "Lawmatics-Prospects-Expanded.Open in Lawmatics"
-          }
-        },
-        {
-          "properties": {
-            "webURL": {
-              "expr": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Lawmatics-Prospects-Expanded"
-                        }
-                      },
-                      "Property": "Clio URL"
-                    }
-                  },
-                  "Function": 3
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Aggregation": {
-                                  "Expression": {
-                                    "Column": {
-                                      "Expression": {
-                                        "SourceRef": {
-                                          "Entity": "Lawmatics-Prospects-Expanded"
-                                        }
-                                      },
-                                      "Property": "Open in Clio"
-                                    }
-                                  },
-                                  "Function": 3
+                                  "Property": "Open in Clio"
                                 }
                               },
                               "Right": {
@@ -428,7 +330,7 @@
                 }
               }
             ],
-            "metadata": "Lawmatics-Prospects-Expanded.Open in Clio"
+            "metadata": "Clio-DenormalizedMatters.Open in Clio"
           }
         }
       ],
@@ -438,13 +340,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "285D"
+                  "Value": "251D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Lawmatics-Prospects-Expanded.source_name"
+            "metadata": "Clio-DenormalizedMatters.DisplayNumber"
           }
         },
         {
@@ -452,13 +354,13 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "129D"
+                  "Value": "157D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Lawmatics-Prospects-Expanded.name"
+            "metadata": "Clio-DenormalizedMatters.CreatedDate"
           }
         },
         {
@@ -466,13 +368,41 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "170D"
+                  "Value": "191D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "Lawmatics-Prospects-Expanded.email"
+            "metadata": "Sum(Clio-DenormalizedMatters.CF_Actual_Value)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "166D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Clio-DenormalizedMatters.Estimated Case Value"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "144D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Clio-DenormalizedMatters.MatterStageName"
           }
         }
       ]
@@ -552,7 +482,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'All Leads Detail'"
+                  "Value": "'All Matters Detail'"
                 }
               }
             }

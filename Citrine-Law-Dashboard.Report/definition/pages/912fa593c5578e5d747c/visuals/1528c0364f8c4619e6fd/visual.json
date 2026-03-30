@@ -3,11 +3,11 @@
   "name": "1528c0364f8c4619e6fd",
   "position": {
     "x": 112,
-    "y": 1958,
-    "z": 35000,
-    "height": 452,
-    "width": 1072,
-    "tabOrder": 23000
+    "y": 404,
+    "z": 9000,
+    "height": 374,
+    "width": 776,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "lineChart",
@@ -24,11 +24,11 @@
                         "PropertyVariationSource": {
                           "Expression": {
                             "SourceRef": {
-                              "Entity": "Lawmatics-Prospects-Expanded"
+                              "Entity": "Clio-DenormalizedMatters"
                             }
                           },
                           "Name": "Variation",
-                          "Property": "Start of Month"
+                          "Property": "Start of Month Clio"
                         }
                       },
                       "Hierarchy": "Date Hierarchy"
@@ -37,8 +37,8 @@
                   "Level": "Year"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Start of Month.Variation.Date Hierarchy.Year",
-              "nativeQueryRef": "Year",
+              "queryRef": "Clio-DenormalizedMatters.Start of Month Clio.Variation.Date Hierarchy.Year",
+              "nativeQueryRef": "Start of Month Clio Year",
               "active": true
             },
             {
@@ -50,11 +50,11 @@
                         "PropertyVariationSource": {
                           "Expression": {
                             "SourceRef": {
-                              "Entity": "Lawmatics-Prospects-Expanded"
+                              "Entity": "Clio-DenormalizedMatters"
                             }
                           },
                           "Name": "Variation",
-                          "Property": "Start of Month"
+                          "Property": "Start of Month Clio"
                         }
                       },
                       "Hierarchy": "Date Hierarchy"
@@ -63,8 +63,8 @@
                   "Level": "Quarter"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Start of Month.Variation.Date Hierarchy.Quarter",
-              "nativeQueryRef": "Quarter",
+              "queryRef": "Clio-DenormalizedMatters.Start of Month Clio.Variation.Date Hierarchy.Quarter",
+              "nativeQueryRef": "Start of Month Clio Quarter",
               "active": true
             },
             {
@@ -76,11 +76,11 @@
                         "PropertyVariationSource": {
                           "Expression": {
                             "SourceRef": {
-                              "Entity": "Lawmatics-Prospects-Expanded"
+                              "Entity": "Clio-DenormalizedMatters"
                             }
                           },
                           "Name": "Variation",
-                          "Property": "Start of Month"
+                          "Property": "Start of Month Clio"
                         }
                       },
                       "Hierarchy": "Date Hierarchy"
@@ -89,8 +89,8 @@
                   "Level": "Month"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Start of Month.Variation.Date Hierarchy.Month",
-              "nativeQueryRef": "Month",
+              "queryRef": "Clio-DenormalizedMatters.Start of Month Clio.Variation.Date Hierarchy.Month",
+              "nativeQueryRef": "Start of Month Clio Month",
               "active": true
             },
             {
@@ -102,11 +102,11 @@
                         "PropertyVariationSource": {
                           "Expression": {
                             "SourceRef": {
-                              "Entity": "Lawmatics-Prospects-Expanded"
+                              "Entity": "Clio-DenormalizedMatters"
                             }
                           },
                           "Name": "Variation",
-                          "Property": "Start of Month"
+                          "Property": "Start of Month Clio"
                         }
                       },
                       "Hierarchy": "Date Hierarchy"
@@ -115,8 +115,8 @@
                   "Level": "Day"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Start of Month.Variation.Date Hierarchy.Day",
-              "nativeQueryRef": "Day",
+              "queryRef": "Clio-DenormalizedMatters.Start of Month Clio.Variation.Date Hierarchy.Day",
+              "nativeQueryRef": "Start of Month Clio Day",
               "active": true
             }
           ]
@@ -216,42 +216,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "Total Leads"
+                  "Property": "Closed Matters"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Total Leads",
-              "nativeQueryRef": "Total Leads"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
-                    }
-                  },
-                  "Property": "Qualified Leads"
-                }
-              },
-              "queryRef": "Lawmatics-Prospects-Expanded.Qualified Leads",
-              "nativeQueryRef": "Qualified Leads"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
-                    }
-                  },
-                  "Property": "Hired"
-                }
-              },
-              "queryRef": "Lawmatics-Prospects-Expanded.Hired",
-              "nativeQueryRef": "Hired"
+              "queryRef": "Clio-DenormalizedMatters.Closed Matters",
+              "nativeQueryRef": "Closed Matters"
             }
           ]
         }

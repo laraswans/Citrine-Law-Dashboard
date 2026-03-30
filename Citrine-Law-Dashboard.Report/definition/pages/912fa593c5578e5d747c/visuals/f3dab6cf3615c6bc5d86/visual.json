@@ -3,11 +3,11 @@
   "name": "f3dab6cf3615c6bc5d86",
   "position": {
     "x": 112,
-    "y": 930,
-    "z": 10000,
-    "height": 668,
-    "width": 836,
-    "tabOrder": 8000
+    "y": 806,
+    "z": 5000,
+    "height": 432,
+    "width": 966,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "funnel",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Clio-Matters"
+                      "Entity": "Clio Stage Order"
                     }
                   },
-                  "Property": "MatterStageName"
+                  "Property": "StageName"
                 }
               },
-              "queryRef": "Clio-Matters.MatterStageName",
-              "nativeQueryRef": "MatterStageName",
+              "queryRef": "Clio Stage Order.StageName",
+              "nativeQueryRef": "StageName",
               "active": true
             }
           ],
@@ -40,14 +40,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Clio-DenormalizedMatters"
+                      "Entity": "Clio Stage Order"
                     }
                   },
-                  "Property": "Total Matters"
+                  "Property": "Funnel Matters"
                 }
               },
-              "queryRef": "Clio-DenormalizedMatters.Total Matters",
-              "nativeQueryRef": "Total Matters"
+              "queryRef": "Clio Stage Order.Funnel Matters",
+              "nativeQueryRef": "Funnel Matters"
             }
           ]
         }
@@ -59,10 +59,10 @@
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Clio-Matters"
+                    "Entity": "Clio Stage Order"
                   }
                 },
-                "Property": "MatterStageName"
+                "Property": "StageOrder"
               }
             },
             "direction": "Ascending"
@@ -129,6 +129,13 @@
               "expr": {
                 "Literal": {
                   "Value": "12D"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -211,7 +218,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Pipeline Funnel'"
+                  "Value": "'CRIM - General Pipeline'"
                 }
               }
             }
@@ -271,101 +278,13 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "1c9899bd46a0be5730ef",
+        "name": "crim_pa_filter_01",
         "ordinal": 0,
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Clio-Matters"
-              }
-            },
-            "Property": "MatterStageName"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "c",
-              "Entity": "Clio-Matters",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "c"
-                              }
-                            },
-                            "Property": "MatterStageName"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "null"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "6e2ae7768d3223984609",
-        "ordinal": 1,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Clio-DenormalizedMatters"
-              }
-            },
-            "Property": "Total Matters"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "d60448272b688c2a6d97",
-        "ordinal": 2,
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Clio-DenormalizedMatters"
+                "Entity": "Clio Stage Order"
               }
             },
             "Property": "PracticeAreaName"
@@ -376,8 +295,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "c",
-              "Entity": "Clio-DenormalizedMatters",
+              "Name": "s",
+              "Entity": "Clio Stage Order",
               "Type": 0
             }
           ],
@@ -390,7 +309,7 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "c"
+                            "Source": "s"
                           }
                         },
                         "Property": "PracticeAreaName"
@@ -401,7 +320,7 @@
                     [
                       {
                         "Literal": {
-                          "Value": "'Personal Injury | Litigation'"
+                          "Value": "'CRIM - GENERAL'"
                         }
                       }
                     ]
@@ -413,7 +332,6 @@
         },
         "howCreated": "User"
       }
-    ],
-    "filterSortOrder": "Custom"
+    ]
   }
 }

@@ -6,7 +6,7 @@
     "y": 152,
     "z": 2000,
     "height": 96,
-    "width": 552,
+    "width": 602,
     "tabOrder": 2000
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Intake Overview",
+                    "value": "Clio Manage Dashboard",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "36pt",

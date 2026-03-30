@@ -1,0 +1,77 @@
+table 'Clio Stage Order'
+	lineageTag: a1b2c3d4-e5f6-7890-abcd-ef1234567890
+
+	measure 'Funnel Matters' =
+			VAR CurrentPA = SELECTEDVALUE('Clio Stage Order'[PracticeAreaName])
+			RETURN
+			CALCULATE(
+			    COUNTROWS('Clio-DenormalizedMatters'),
+			    'Clio-DenormalizedMatters'[PracticeAreaName] = CurrentPA
+			) + 0
+		formatString: 0
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-ef1234567894
+
+	column PracticeAreaName
+		dataType: string
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-ef1234567891
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [PracticeAreaName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column StageName
+		dataType: string
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-ef1234567892
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [StageName]
+		sortByColumn: StageOrder
+
+		annotation SummarizationSetBy = Automatic
+
+	column StageOrder
+		dataType: int64
+		formatString: 0
+		lineageTag: a1b2c3d4-e5f6-7890-abcd-ef1234567893
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [StageOrder]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Clio Stage Order' = calculated
+		mode: import
+		source =
+				DATATABLE(
+				    "PracticeAreaName", STRING,
+				    "StageName", STRING,
+				    "StageOrder", INTEGER,
+				    {
+				        {"CRIM - GENERAL", "1. Case Initiation", 1},
+				        {"CRIM - GENERAL", "2. Initial Discovery / Rule 15.2", 2},
+				        {"CRIM - GENERAL", "3. Supplemental Discovery / Rule 16.3", 3},
+				        {"CRIM - GENERAL", "4. Plea Negotiation", 4},
+				        {"CRIM - GENERAL", "5. Trial Preparation", 5},
+				        {"CRIM - GENERAL", "6. Awaiting Trial", 6},
+				        {"CRIM - GENERAL", "7. Warrant Issued", 7},
+				        {"CRIM - GENERAL", "8A. Resolution, Plea Accepted", 8},
+				        {"CRIM - GENERAL", "8B. Resolution, Deferred Prosecution", 9},
+				        {"CRIM - GENERAL", "8C. Resolution, Dismissal", 10},
+				        {"CRIM - GENERAL", "8D. Resolution, Transfer to Separate Court", 11},
+				        {"CRIM - GENERAL", "9A. Complete", 12},
+				        {"CRIM - GENERAL", "9B. Complete, Pending ADOT Hearing", 13},
+				        {"CRIM - GENERAL", "9C. Complete, Restitution Pending", 14},
+				        {"CRIM - GENERAL", "10. File Closure", 15},
+				        {"Personal Injury | Pre-Litigation", "Case Initiation", 1},
+				        {"Personal Injury | Pre-Litigation", "Client in Treatment", 2},
+				        {"Personal Injury | Pre-Litigation", "Demand Workup", 3},
+				        {"Personal Injury | Pre-Litigation", "Demand Drafting", 4},
+				        {"Personal Injury | Pre-Litigation", "Demand Followup", 5},
+				        {"Personal Injury | Pre-Litigation", "Demand Negotiation", 6},
+				        {"Personal Injury | Pre-Litigation", "Lien Resolution", 7},
+				        {"Personal Injury | Pre-Litigation", "Conservatorship", 8},
+				        {"Personal Injury | Pre-Litigation", "File Closure", 9}
+				    }
+				)
+

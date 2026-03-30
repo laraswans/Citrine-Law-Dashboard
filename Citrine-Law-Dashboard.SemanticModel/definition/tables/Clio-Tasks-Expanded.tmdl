@@ -20,7 +20,7 @@ table Clio-Tasks-Expanded
 
 	column CreatedDate
 		dataType: dateTime
-		formatString: General Date
+		formatString: mmmm d\, yyyy
 		lineageTag: 69a8fbb7-2b52-4896-a167-e68342b49d49
 		summarizeBy: none
 		sourceColumn: CreatedDate
@@ -31,6 +31,8 @@ table Clio-Tasks-Expanded
 			defaultHierarchy: LocalDateTable_a467071b-9966-4567-b773-20494808106a.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column UpdatedDate
 		dataType: dateTime
@@ -88,7 +90,7 @@ table Clio-Tasks-Expanded
 
 	column DueDate
 		dataType: dateTime
-		formatString: Long Date
+		formatString: d mmmm\, yyyy
 		lineageTag: 14a39747-8191-495f-8080-bf75de2cf6df
 		summarizeBy: none
 		sourceColumn: DueDate
@@ -101,6 +103,8 @@ table Clio-Tasks-Expanded
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column Permission
 		dataType: string

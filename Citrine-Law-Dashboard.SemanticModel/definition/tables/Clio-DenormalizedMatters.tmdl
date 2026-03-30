@@ -49,10 +49,11 @@ table Clio-DenormalizedMatters
 	measure 'Median Days to Close' =
 			MEDIANX(
 			    FILTER(
-			        'Clio-DenormalizedMatters',
+			        ALL('Clio-DenormalizedMatters'),
 			        NOT(ISBLANK('Clio-DenormalizedMatters'[CloseDate]))
+			            && NOT(ISBLANK('Clio-DenormalizedMatters'[OpenDate]))
 			    ),
-			    [Days Open]
+			    DATEDIFF('Clio-DenormalizedMatters'[OpenDate], 'Clio-DenormalizedMatters'[CloseDate], DAY)
 			)
 		formatString: 0
 		lineageTag: c1000008-0000-0000-0000-000000000008
@@ -305,6 +306,9 @@ table Clio-DenormalizedMatters
 		formatString: $#,0
 		lineageTag: c1000035-0000-0000-0000-000000000035
 
+	measure 'Open in Clio' = "Open in Clio"
+		lineageTag: 88d753d0-0b72-439c-95b3-2b86138f3128
+
 	column Id
 		dataType: int64
 		formatString: 0
@@ -324,7 +328,7 @@ table Clio-DenormalizedMatters
 
 	column CreatedDate
 		dataType: dateTime
-		formatString: General Date
+		formatString: d mmmm\, yyyy
 		lineageTag: 8d556fe8-f3d4-417c-a450-5e0e960bf3c7
 		summarizeBy: none
 		sourceColumn: CreatedDate
@@ -335,6 +339,8 @@ table Clio-DenormalizedMatters
 			defaultHierarchy: LocalDateTable_e124d6f3-e167-4ee1-bbbd-62bd74e638aa.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
 
 	column UpdatedDate
 		dataType: dateTime
@@ -808,13 +814,12 @@ table Clio-DenormalizedMatters
 
 	column CF_Actual_Value
 		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 50660b7d-5cd3-4cca-b59a-4ea55abab6e1
 		summarizeBy: sum
 		sourceColumn: CF_Actual_Value
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column CF_Actual_Firm_Fees_Amount
 		dataType: double
@@ -1675,6 +1680,18 @@ table Clio-DenormalizedMatters
 			isDefault
 			relationship: 944e267b-6a5d-4655-856b-440a53179116
 			defaultHierarchy: LocalDateTable_b9cbaf3e-5cc0-4c92-86b4-ee9e94711f77.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start of Month Clio' = DATE(YEAR('Clio-DenormalizedMatters'[CloseDate]), MONTH('Clio-DenormalizedMatters'[CloseDate]), 1)
+		formatString: General Date
+		lineageTag: 0d0f86d9-a46f-410e-b3aa-938a53a0ac91
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 4d9e6f22-18c0-4254-a893-9e9dc715d9f8
+			defaultHierarchy: LocalDateTable_6fecfc5d-f075-4bc1-99ed-0293bac25c2b.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

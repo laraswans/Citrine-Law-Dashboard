@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "efec502f9a514f2b65c5",
   "position": {
-    "x": 353.33333333333337,
+    "x": 508,
     "y": 248,
     "z": 4000,
     "height": 120,
-    "width": 224,
+    "width": 380,
     "tabOrder": 4000
   },
   "visual": {
@@ -20,17 +20,35 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "Qualified Leads"
+                  "Property": "Median Days to Close"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Qualified Leads",
-              "nativeQueryRef": "Qualified Leads"
+              "queryRef": "Clio-DenormalizedMatters.Median Days to Close",
+              "nativeQueryRef": "Median Days to Close"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Clio-DenormalizedMatters"
+                  }
+                },
+                "Property": "Median Days to Close"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {

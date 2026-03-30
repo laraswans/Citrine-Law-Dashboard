@@ -645,3 +645,13 @@ relationship 'Lawmatics-Prospects-Expanded_stage_id_Stage Mapping_StageId'
 	fromColumn: Lawmatics-Prospects-Expanded.stage_id
 	toColumn: 'Stage Mapping'.StageId
 
+relationship 4d9e6f22-18c0-4254-a893-9e9dc715d9f8
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-DenormalizedMatters.'Start of Month Clio'
+	toColumn: LocalDateTable_6fecfc5d-f075-4bc1-99ed-0293bac25c2b.Date
+
+relationship b3a7d1e9-5c42-4f08-9a6b-2e8f104c7d53
+	crossFilteringBehavior: bothDirections
+	fromColumn: Clio-DenormalizedMatters.MatterStageName
+	toColumn: 'Clio Stage Order'.StageName
+
