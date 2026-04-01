@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "c4a8f2e1b3d5670912ef",
-  "displayName": "Financial Report",
+  "displayName": "Financial Dashboard",
   "displayOption": "ActualSize",
   "height": 2895,
   "width": 1920,

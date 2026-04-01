@@ -8,12 +8,17 @@ table DateTable
 		isNameInferred
 		sourceColumn: [Date]
 
+		variation Variation
+			isDefault
+			relationship: 723205f9-b7f1-4025-a4f8-da952132ffd3
+			defaultHierarchy: LocalDateTable_60a2dc31-b37e-40e1-b5d3-e720e5aa577d.'Date Hierarchy'
+
 		annotation SummarizationSetBy = Automatic
 
 	column Year
 		formatString: 0
 		lineageTag: a1b2c3d4-e5f6-7890-abcd-222222222222
-		summarizeBy: none
+		summarizeBy: sum
 		isNameInferred
 		sourceColumn: [Year]
 
@@ -22,7 +27,7 @@ table DateTable
 	column Month
 		formatString: 0
 		lineageTag: a1b2c3d4-e5f6-7890-abcd-333333333333
-		summarizeBy: none
+		summarizeBy: sum
 		isNameInferred
 		sourceColumn: [Month]
 
@@ -51,6 +56,11 @@ table DateTable
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [MonthStart]
+
+		variation Variation
+			isDefault
+			relationship: a926e125-74c8-469c-bc76-f94de25a8790
+			defaultHierarchy: LocalDateTable_d4728b53-d43a-476a-abeb-85ff1cbee496.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 

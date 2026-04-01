@@ -6,7 +6,7 @@ table 'Clio Stage Order'
 			RETURN
 			CALCULATE(
 			    COUNTROWS('Clio-DenormalizedMatters'),
-			    'Clio-DenormalizedMatters'[PracticeAreaName] = CurrentPA
+			    'Clio-DenormalizedMatters'[Practice Area] = CurrentPA
 			) + 0
 		formatString: 0
 		lineageTag: a1b2c3d4-e5f6-7890-abcd-ef1234567894

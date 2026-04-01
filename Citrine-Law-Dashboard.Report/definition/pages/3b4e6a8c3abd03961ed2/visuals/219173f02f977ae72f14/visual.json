@@ -23,11 +23,11 @@
                       "Entity": "Lawmatics-Prospects-Expanded"
                     }
                   },
-                  "Property": "Searched Box Data"
+                  "Property": "Search Box"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Searched Box Data",
-              "nativeQueryRef": "Searched Box Data"
+              "queryRef": "Lawmatics-Prospects-Expanded.Search Box",
+              "nativeQueryRef": "Search Box"
             }
           ]
         }

@@ -90,7 +90,7 @@ relationship f8863078-3c32-4214-ac44-ca6671d10782
 
 relationship 778b369a-5ebb-45a1-ac2e-3a6a9a673163
 	joinOnDateBehavior: datePartOnly
-	fromColumn: Clio-DenormalizedMatters.CreatedDate
+	fromColumn: Clio-DenormalizedMatters.'Created Date'
 	toColumn: LocalDateTable_e124d6f3-e167-4ee1-bbbd-62bd74e638aa.Date
 
 relationship dee34395-7842-4cae-b917-f5e4c9466b94
@@ -102,11 +102,6 @@ relationship c33c2d6a-632a-4969-9dee-957d0e692b82
 	joinOnDateBehavior: datePartOnly
 	fromColumn: Clio-DenormalizedMatters.OpenDate
 	toColumn: LocalDateTable_8f2891b4-f2b0-428a-bf4c-225566f21705.Date
-
-relationship bf422f9c-af0c-4340-b92c-2ac92dabd017
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Clio-DenormalizedMatters.CloseDate
-	toColumn: LocalDateTable_23b2a18f-0dc2-4140-85c1-8f89b9be4150.Date
 
 relationship 658b5eb3-432f-4e9e-a05d-e4bf91fdeb67
 	joinOnDateBehavior: datePartOnly
@@ -268,14 +263,9 @@ relationship a87bbb3f-99e0-4752-949b-b272bb8d3a58
 	fromColumn: Clio-PIMatterAccruals.DistributionDate
 	toColumn: LocalDateTable_7f217330-1dfe-49cf-95b2-76b25543c203.Date
 
-relationship bead2a23-a0d3-450f-8a75-1e1a32590b4b
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Clio-PIMatterAccruals.MonthDate
-	toColumn: LocalDateTable_2ebcbb37-d9a3-427f-91f3-dea02373c9b7.Date
-
 relationship 8f43c09a-5f55-40a1-85de-2e2da04ebb92
 	joinOnDateBehavior: datePartOnly
-	fromColumn: Clio-Tasks-Expanded.CreatedDate
+	fromColumn: Clio-Tasks-Expanded.'Created Date'
 	toColumn: LocalDateTable_a467071b-9966-4567-b773-20494808106a.Date
 
 relationship bcb55277-695d-4abb-bb59-b4bb44d6d098
@@ -285,7 +275,7 @@ relationship bcb55277-695d-4abb-bb59-b4bb44d6d098
 
 relationship 05cc4644-601d-46f6-a4a4-c1c5a17e8ad7
 	joinOnDateBehavior: datePartOnly
-	fromColumn: Clio-Tasks-Expanded.DueDate
+	fromColumn: Clio-Tasks-Expanded.'Due Date'
 	toColumn: LocalDateTable_c28b0b65-2ac4-4d5a-9fb7-75c62d516a8f.Date
 
 relationship 1056530f-7926-4938-9112-0a95b20d5c02
@@ -421,13 +411,13 @@ relationship AutoDetected_9b3728d5-7e0b-41cf-a96e-9c5a972d59fb
 
 relationship AutoDetected_107eca58-2605-4e71-8321-213a29730a3b
 	fromColumn: Clio-PIMatterAccruals.DisplayNumber
-	toColumn: Clio-DenormalizedMatters.DisplayNumber
+	toColumn: Clio-DenormalizedMatters.'Display Number'
 
 relationship AutoDetected_3b5b50a5-2a23-48b2-bf78-8654069317cd
 	crossFilteringBehavior: bothDirections
 	fromCardinality: one
 	fromColumn: Clio-Matters.DisplayNumber
-	toColumn: Clio-DenormalizedMatters.DisplayNumber
+	toColumn: Clio-DenormalizedMatters.'Display Number'
 
 relationship 182eebcd-e77f-2e6a-8259-5e857f8ca21e
 	crossFilteringBehavior: bothDirections
@@ -652,6 +642,71 @@ relationship 4d9e6f22-18c0-4254-a893-9e9dc715d9f8
 
 relationship b3a7d1e9-5c42-4f08-9a6b-2e8f104c7d53
 	crossFilteringBehavior: bothDirections
-	fromColumn: Clio-DenormalizedMatters.MatterStageName
+	fromColumn: Clio-DenormalizedMatters.' Stage Name'
 	toColumn: 'Clio Stage Order'.StageName
+
+relationship 2e745b00-a035-4c26-ab38-957366d60009
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Prospects-Expanded.MonthStart
+	toColumn: LocalDateTable_81092206-3cc8-4eba-bc5c-eec6c74d51e0.Date
+
+relationship a04db001-3984-4c98-91bd-2dab5c038fee
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clio-DenormalizedMatters.CloseMonthSort
+	toColumn: LocalDateTable_1b2fe441-2123-459d-846e-02b78ed3a05a.Date
+
+relationship 723205f9-b7f1-4025-a4f8-da952132ffd3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DateTable.Date
+	toColumn: LocalDateTable_60a2dc31-b37e-40e1-b5d3-e720e5aa577d.Date
+
+relationship a926e125-74c8-469c-bc76-f94de25a8790
+	joinOnDateBehavior: datePartOnly
+	fromColumn: DateTable.MonthStart
+	toColumn: LocalDateTable_d4728b53-d43a-476a-abeb-85ff1cbee496.Date
+
+relationship 2968636d-ce7d-43fc-aeea-831727058419
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Tasks.due_date
+	toColumn: LocalDateTable_a18f77d8-df76-4ab6-9d42-d15d1ed8b1f8.Date
+
+relationship 89bd7ca4-265b-4aa5-8389-2e70799df7b6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Tasks.CreatedDate
+	toColumn: LocalDateTable_597f2526-c0b9-4c51-8ee3-1fe95ec11f32.Date
+
+relationship 34aebc55-1130-4588-8afd-f6594cfc6675
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Tasks.UpdatedDate
+	toColumn: LocalDateTable_c6bae963-9d37-4286-a27f-2a0b6a7c4e08.Date
+
+relationship 55bf04ac-b7db-4d04-8bd9-8364c2e77db3
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Tasks._skyvia_sync
+	toColumn: LocalDateTable_b24e752a-c57c-47d0-8e1a-0e991fb90f88.Date
+
+relationship fb4c3e80-ed0b-40fa-9a9c-be564ba21145
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Task_Assignees.due_date
+	toColumn: LocalDateTable_4c2b64a7-1c38-47cf-bb22-9dc687308fa3.Date
+
+relationship 68f8e03b-2839-4eaf-b41b-c022330f20d6
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Tasks_With_Assignees.due_date
+	toColumn: LocalDateTable_c4da18e6-98ef-4530-9010-e538ddff0b92.Date
+
+relationship 01355cd7-a451-4b52-a5cb-df7e2c1a79ab
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Tasks_With_Assignees.CreatedDate
+	toColumn: LocalDateTable_04754b2e-2595-497a-b018-2c727eee9561.Date
+
+relationship eb3e2cb8-399d-4eef-8a5d-f6f676e150e4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Tasks_With_Assignees.UpdatedDate
+	toColumn: LocalDateTable_90eb9302-331f-4231-8097-6c1fad1ae091.Date
+
+relationship ffa27b7a-777a-467f-936b-5096b843534b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Lawmatics-Tasks_With_Assignees._skyvia_sync
+	toColumn: LocalDateTable_5aaf8101-ada7-47f3-bcd6-72ff1c706cab.Date
 

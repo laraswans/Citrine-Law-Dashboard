@@ -4,7 +4,7 @@
   "position": {
     "x": 112,
     "y": 404,
-    "z": 9000,
+    "z": 8000,
     "height": 374,
     "width": 776,
     "tabOrder": 7000
@@ -485,7 +485,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'6-Month Lead Trend'"
+                  "Value": "'Closed Cases per Month'"
                 }
               }
             }

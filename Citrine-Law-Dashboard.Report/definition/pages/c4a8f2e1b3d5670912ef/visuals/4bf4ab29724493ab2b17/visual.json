@@ -68,17 +68,22 @@
           "projections": [
             {
               "field": {
-                "Measure": {
+                "Aggregation": {
                   "Expression": {
-                    "SourceRef": {
-                      "Entity": "Clio-DenormalizedMatters"
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Clio-DenormalizedMatters"
+                        }
+                      },
+                      "Property": "CF_Actual_Value"
                     }
                   },
-                  "Property": "Source Avg Settlement"
+                  "Function": 1
                 }
               },
-              "queryRef": "Clio-DenormalizedMatters.Source Avg Settlement",
-              "nativeQueryRef": "Avg Settlement"
+              "queryRef": "Sum(Clio-DenormalizedMatters.CF_Actual_Value)",
+              "nativeQueryRef": "Average of CF_Actual_Value"
             }
           ]
         }
@@ -87,18 +92,24 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "Clio-DenormalizedMatters"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Clio-DenormalizedMatters"
+                      }
+                    },
+                    "Property": "CF_Actual_Value"
                   }
                 },
-                "Property": "Source Avg Settlement"
+                "Function": 1
               }
             },
             "direction": "Descending"
           }
-        ]
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {

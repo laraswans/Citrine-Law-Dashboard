@@ -6,7 +6,7 @@
     "y": 152,
     "z": 2000,
     "height": 96,
-    "width": 602,
+    "width": 844,
     "tabOrder": 2000
   },
   "visual": {
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Clio Manage Dashboard",
+                    "value": "Clio Manage: Matters Overview",
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontSize": "36pt",

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
   "name": "f490637095324e1bfe70",
   "position": {
-    "x": 1532,
+    "x": 1554,
     "y": 1594,
-    "z": 12000,
+    "z": 13000,
     "height": 48,
     "width": 250,
-    "tabOrder": 12000
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "textSlicer",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Lawmatics-Prospects-Expanded"
+                      "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "Searched Box Data"
+                  "Property": "Search Box"
                 }
               },
-              "queryRef": "Lawmatics-Prospects-Expanded.Searched Box Data",
-              "nativeQueryRef": "Searched Box Data"
+              "queryRef": "Clio-DenormalizedMatters.Search Box",
+              "nativeQueryRef": "Search Box"
             }
           ]
         }

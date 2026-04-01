@@ -67,8 +67,6 @@ table Lawmatics-CustomFields
 			relationship: 6f027263-ed37-4016-8435-8aa723cb289e
 			defaultHierarchy: LocalDateTable_93b0e6d1-2a9e-48a0-919a-53b97a93f204.'Date Hierarchy'
 
-		changedProperty = DataType
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation PBI_FormatHint = {"isDateTimeCustom":true}

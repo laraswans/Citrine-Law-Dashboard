@@ -218,7 +218,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'CRIM - General Pipeline'"
+                  "Value": "'CRIM General Pipeline'"
                 }
               }
             }
@@ -278,8 +278,23 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "crim_pa_filter_01",
+        "name": "aeb6530f4a6b5139c26d",
         "ordinal": 0,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Clio Stage Order"
+              }
+            },
+            "Property": "Funnel Matters"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "crim_pa_filter_01",
+        "ordinal": 1,
         "field": {
           "Column": {
             "Expression": {
@@ -331,7 +346,78 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "3c53b458f439a1f77a33",
+        "ordinal": 2,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Clio-DenormalizedMatters"
+              }
+            },
+            "Property": "Practice Area"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "c",
+              "Entity": "Clio-DenormalizedMatters",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "c"
+                          }
+                        },
+                        "Property": "Practice Area"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'CRIM - GENERAL'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "cea80b1e14573b7f87c9",
+        "ordinal": 3,
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Clio Stage Order"
+              }
+            },
+            "Property": "StageName"
+          }
+        },
+        "type": "Categorical"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

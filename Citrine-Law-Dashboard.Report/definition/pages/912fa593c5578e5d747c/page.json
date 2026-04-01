@@ -1,15 +1,10 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
   "name": "912fa593c5578e5d747c",
-  "displayName": "Clio Manage Dashboard",
+  "displayName": "Clio Manage: Matters Overview",
   "displayOption": "ActualSize",
-  "height": 4826,
+  "height": 2150,
   "width": 1920,
-  "pageBinding": {
-    "name": "06572dd74eefb0e70493",
-    "type": "Default",
-    "parameters": []
-  },
   "objects": {
     "background": [
       {
@@ -111,6 +106,31 @@
     {
       "source": "f3dab6cf3615c6bc5d86",
       "target": "piprelit_pipeline_funnel01",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "piprelit_pipeline_funnel01",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "a54db14320999e64bec4",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "2afb490b1191e470fc20",
+      "type": "NoFilter"
+    },
+    {
+      "source": "f490637095324e1bfe70",
+      "target": "dd41d48b0677206d9d31",
+      "type": "DataFilter"
+    },
+    {
+      "source": "925ae26079ec4a195c03",
+      "target": "1528c0364f8c4619e6fd",
       "type": "NoFilter"
     }
   ]

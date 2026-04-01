@@ -110,7 +110,7 @@ table LocalDateTable_c28b0b65-2ac4-4d5a-9fb7-75c62d516a8f
 
 	partition LocalDateTable_c28b0b65-2ac4-4d5a-9fb7-75c62d516a8f = calculated
 		mode: import
-		source = Calendar(Date(Year(MIN('Clio-Tasks-Expanded'[DueDate])), 1, 1), Date(Year(MAX('Clio-Tasks-Expanded'[DueDate])), 12, 31))
+		source = Calendar(Date(Year(MIN('Clio-Tasks-Expanded'[Due Date])), 1, 1), Date(Year(MAX('Clio-Tasks-Expanded'[Due Date])), 12, 31))
 
 	annotation __PBI_LocalDateTable = true
 

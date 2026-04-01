@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["Lawmatics-Prospects-Expanded","Lawmatics-CustomFields","Lawmatics-Contacts","Lawmatics-Events","Lawmatics-Expenses","Lawmatics-Pipelines","Lawmatics-Prospects","Lawmatics-Stages","Lawmatics-TimeEntries","Lawmatics-Users","Clio-DenormalizedContacts","Clio-DenormalizedMatters","Clio-PIMatterAccruals","Clio-Tasks-Expanded","Clio-Bills","Clio-ContactCustomFieldValues","Clio-MatterCustomFieldValues","Clio-Contacts","Clio-Matters","Clio-Users","Clio-Tasks"]
+annotation PBI_QueryOrder = ["Lawmatics-Prospects-Expanded","Lawmatics-CustomFields","Lawmatics-Contacts","Lawmatics-Events","Lawmatics-Expenses","Lawmatics-Pipelines","Lawmatics-Prospects","Lawmatics-Stages","Lawmatics-TimeEntries","Lawmatics-Users","Clio-DenormalizedContacts","Clio-DenormalizedMatters","Clio-PIMatterAccruals","Clio-Tasks-Expanded","Clio-Bills","Clio-ContactCustomFieldValues","Clio-MatterCustomFieldValues","Clio-Contacts","Clio-Matters","Clio-Users","Clio-Tasks","Lawmatics-Tasks","Lawmatics-Task_Assignees","Lawmatics-Tasks_With_Assignees"]
 
 annotation PBI_ProTooling = ["MCP-PBIModeling","DevMode"]
 
@@ -46,7 +46,6 @@ ref table Clio-DenormalizedMatters
 ref table LocalDateTable_e124d6f3-e167-4ee1-bbbd-62bd74e638aa
 ref table LocalDateTable_92185519-0d2e-4e64-b0f6-8c7ad5366faf
 ref table LocalDateTable_8f2891b4-f2b0-428a-bf4c-225566f21705
-ref table LocalDateTable_23b2a18f-0dc2-4140-85c1-8f89b9be4150
 ref table LocalDateTable_dd6710c0-a037-4838-8500-5ea0c2d64bbf
 ref table LocalDateTable_adf5800f-44de-4639-b4ac-2327c89daaf1
 ref table LocalDateTable_270ece6b-16f8-4990-8389-3bc0325f16de
@@ -80,7 +79,6 @@ ref table LocalDateTable_5b488a9c-a092-4b85-adaf-9c08d054d83c
 ref table LocalDateTable_dbf901f2-c7af-4500-a6bd-0c8b8a8cdf0d
 ref table LocalDateTable_d44b4bfe-dfc9-406b-9d06-ca0c2f5c259d
 ref table LocalDateTable_7f217330-1dfe-49cf-95b2-76b25543c203
-ref table LocalDateTable_2ebcbb37-d9a3-427f-91f3-dea02373c9b7
 ref table Clio-Tasks-Expanded
 ref table LocalDateTable_a467071b-9966-4567-b773-20494808106a
 ref table LocalDateTable_33c4abcc-f1af-4ff6-b7d0-ad2b86463a8e
@@ -160,6 +158,22 @@ ref table LocalDateTable_4a7bd14e-3f40-434d-9824-2600beae90ae
 ref table LocalDateTable_497c6c6c-2753-47dc-9ca1-b6e0effa3845
 ref table 'Clio Stage Order'
 ref table LocalDateTable_6fecfc5d-f075-4bc1-99ed-0293bac25c2b
+ref table Lawmatics-Tasks
+ref table LocalDateTable_81092206-3cc8-4eba-bc5c-eec6c74d51e0
+ref table LocalDateTable_1b2fe441-2123-459d-846e-02b78ed3a05a
+ref table LocalDateTable_60a2dc31-b37e-40e1-b5d3-e720e5aa577d
+ref table LocalDateTable_d4728b53-d43a-476a-abeb-85ff1cbee496
+ref table LocalDateTable_a18f77d8-df76-4ab6-9d42-d15d1ed8b1f8
+ref table LocalDateTable_597f2526-c0b9-4c51-8ee3-1fe95ec11f32
+ref table LocalDateTable_c6bae963-9d37-4286-a27f-2a0b6a7c4e08
+ref table LocalDateTable_b24e752a-c57c-47d0-8e1a-0e991fb90f88
+ref table Lawmatics-Task_Assignees
+ref table LocalDateTable_4c2b64a7-1c38-47cf-bb22-9dc687308fa3
+ref table Lawmatics-Tasks_With_Assignees
+ref table LocalDateTable_c4da18e6-98ef-4530-9010-e538ddff0b92
+ref table LocalDateTable_04754b2e-2595-497a-b018-2c727eee9561
+ref table LocalDateTable_90eb9302-331f-4231-8097-6c1fad1ae091
+ref table LocalDateTable_5aaf8101-ada7-47f3-bcd6-72ff1c706cab
 
 ref cultureInfo en-US
 

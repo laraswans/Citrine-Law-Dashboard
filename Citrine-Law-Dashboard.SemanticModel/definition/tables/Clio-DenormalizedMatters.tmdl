@@ -81,8 +81,8 @@ table Clio-DenormalizedMatters
 			CALCULATE(
 			    [Open Matters],
 			    KEEPFILTERS(
-			        'Clio-DenormalizedMatters'[ResponsibleAttorneyName] = BLANK() ||
-			        'Clio-DenormalizedMatters'[ResponsibleAttorneyName] = ""
+			        'Clio-DenormalizedMatters'[ Responsible Attorney] = BLANK() ||
+			        'Clio-DenormalizedMatters'[ Responsible Attorney] = ""
 			    )
 			) + 0
 		formatString: 0
@@ -326,12 +326,12 @@ table Clio-DenormalizedMatters
 
 		annotation SummarizationSetBy = Automatic
 
-	column CreatedDate
+	column 'Created Date'
 		dataType: dateTime
 		formatString: d mmmm\, yyyy
 		lineageTag: 8d556fe8-f3d4-417c-a450-5e0e960bf3c7
 		summarizeBy: none
-		sourceColumn: CreatedDate
+		sourceColumn: Created Date
 
 		variation Variation
 			isDefault
@@ -365,11 +365,11 @@ table Clio-DenormalizedMatters
 
 		annotation SummarizationSetBy = Automatic
 
-	column DisplayNumber
+	column 'Display Number'
 		dataType: string
 		lineageTag: d6f8a9b5-a3a9-40c5-b9fd-b8d1d3b2bd50
 		summarizeBy: none
-		sourceColumn: DisplayNumber
+		sourceColumn: Display Number
 
 		annotation SummarizationSetBy = Automatic
 
@@ -478,11 +478,6 @@ table Clio-DenormalizedMatters
 		summarizeBy: none
 		sourceColumn: CloseDate
 
-		variation Variation
-			isDefault
-			relationship: bf422f9c-af0c-4340-b92c-2ac92dabd017
-			defaultHierarchy: LocalDateTable_23b2a18f-0dc2-4140-85c1-8f89b9be4150.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date
@@ -560,11 +555,11 @@ table Clio-DenormalizedMatters
 
 		annotation SummarizationSetBy = Automatic
 
-	column PracticeAreaName
+	column 'Practice Area'
 		dataType: string
 		lineageTag: 116af1a6-c742-478e-836f-6b9425d2099a
 		summarizeBy: none
-		sourceColumn: PracticeAreaName
+		sourceColumn: Practice Area
 
 		annotation SummarizationSetBy = Automatic
 
@@ -577,11 +572,11 @@ table Clio-DenormalizedMatters
 
 		annotation SummarizationSetBy = Automatic
 
-	column MatterStageName
+	column ' Stage Name'
 		dataType: string
 		lineageTag: c404a714-d2d6-45a1-927b-15073ee92796
 		summarizeBy: none
-		sourceColumn: MatterStageName
+		sourceColumn: " Stage Name"
 
 		annotation SummarizationSetBy = Automatic
 
@@ -594,11 +589,11 @@ table Clio-DenormalizedMatters
 
 		annotation SummarizationSetBy = Automatic
 
-	column ResponsibleAttorneyName
+	column ' Responsible Attorney'
 		dataType: string
 		lineageTag: 54e3ecc7-70c9-45a2-961e-d1ae2c6ef259
 		summarizeBy: none
-		sourceColumn: ResponsibleAttorneyName
+		sourceColumn: " Responsible Attorney"
 
 		annotation SummarizationSetBy = Automatic
 
@@ -1246,13 +1241,12 @@ table Clio-DenormalizedMatters
 
 	column CF_Current_Estimated_Value
 		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: e4855c45-0301-410f-8ce2-2d4ea552f1c3
 		summarizeBy: sum
 		sourceColumn: CF_Current_Estimated_Value
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column CF_DOB
 		dataType: dateTime
@@ -1647,6 +1641,11 @@ table Clio-DenormalizedMatters
 		lineageTag: b1000002-0000-0000-0000-000000000002
 		summarizeBy: none
 
+		variation Variation
+			isDefault
+			relationship: a04db001-3984-4c98-91bd-2dab5c038fee
+			defaultHierarchy: LocalDateTable_1b2fe441-2123-459d-846e-02b78ed3a05a.'Date Hierarchy'
+
 	column CloseYearQuarter = IF(NOT(ISBLANK([CloseDate])), YEAR([CloseDate]) & " Q" & CEILING(MONTH([CloseDate]), 3) / 3, BLANK())
 		dataType: string
 		lineageTag: b1000003-0000-0000-0000-000000000003
@@ -1695,6 +1694,14 @@ table Clio-DenormalizedMatters
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Search Box'
+		dataType: string
+		lineageTag: c27be38c-049a-4f6b-a4f0-de436570a6a9
+		summarizeBy: none
+		sourceColumn: Search Box
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Clio-DenormalizedMatters = m
 		mode: import
 		source =
@@ -1702,9 +1709,13 @@ table Clio-DenormalizedMatters
 				    Source = GoogleBigQuery.Database([Implementation="2.0"]),
 				    #"caramel-compass-452313-u3_Database" = Source{[Name="caramel-compass-452313-u3",Kind="Database"]}[Data],
 				    clio_manage_Schema = #"caramel-compass-452313-u3_Database"{[Name="clio_manage",Kind="Schema"]}[Data],
-				    DenormalizedMatters_View = clio_manage_Schema{[Name="DenormalizedMatters",Kind="View"]}[Data]
+				    DenormalizedMatters_View = clio_manage_Schema{[Name="DenormalizedMatters",Kind="View"]}[Data],
+				    #"Inserted Merged Column" = Table.AddColumn(DenormalizedMatters_View, "Search Box", each Text.Combine({[CF_ADOT___Withdraw_No__], Text.From([CF_Assigned_to_Pre_Trial_Service], "en-US"), Text.From([CF_Offer_Accepted_Phase_5a_Complete], "en-US"), [CF_Demand_Audit_Missing_Records], Text.From([CF_Client_Treatment_Completed], "en-US"), Text.From([CF_Phase_2_Completed], "en-US"), [CF_Salutation], [CF_Report_Number], [CF_Driver_License___Class], [CF_Driver_License___Issuing_State], [CF_Driver_License___Number], [CF_ADOT___LE_or_DR_Case_No_], Text.From([CF_ADOT___Request_for_Hearing_Sent], "en-US"), Text.From([CF_ADOT__Telephonic_Callback_Number], "en-US"), Text.From([CF_ADOT___Admin_Per_Se], "en-US"), [CF_Public_Defender_Assigned], [CF_Judicial_Assistant], [CF_Judge_Assigned], [CF_Prosecutor_Assistant], [CF_Prosecutor_Assigned], Text.From([CF_Representation_Complete], "en-US"), [CF_Case_Number], Text.From([CF_SOFT_SOL_CALENDARED], "en-US"), Text.From([CF_FIRM_SOL_CALENDARED], "en-US"), Text.From([CF_Answer_Filed], "en-US"), Text.From([CF_Demand_Ready], "en-US"), Text.From([CF_Client_Done_Treating], "en-US"), [CF_Disposition_Details], [CF_Case_Disposition_], Text.From([CF_Hire_Date], "en-US"), [CF_Red_Flag], [CF_Last_4_SSN], Text.From([CF_DOB], "en-US"), Text.From([CF_Current_Estimated_Value], "en-US"), [CF_Marital_Status], Text.From([CF_SOL__NOC_], "en-US"), Text.From([CF_SOL__3rd_Party_], "en-US"), Text.From([CF_SOL__1st_Party_], "en-US"), [CF_Investigating_Agency], [CF_First_Party_Coverage__UM_UIM__], [CF_Goes_by__name_], [CF_Communication_Preference], [CF_Emergency_Point_of_Contact], [CF_Preferred_Language], [CF_Immigration_Status], [CF_Client_1st_Party_Insurance_Name], [CF_Adverse_Insurance_Name], [CF_PI_Matter_Status], [CF_Litigation_Status], [CF_Pre_Litigation_Status_], [CF_PI_Litigation_Tier_], [CF_Insurance_Company_Name], Text.From([CF_Date_of_Incident], "en-US"), [CF_Name_of_Defendant__s_], [CF_UM_UIM_Ins__Additional_Adjuster], [CF_UM_UIM_Ins__Additional_Carrier], [CF_UM_UIM_Insurance_Carrier], [CF_UM_UIM_Adjuster], [CF_Adverse_Adjuster], [CF_Adverse_Insurance_Carrier], [CF_Attorney_Bar_No_], Text.From([CF_UIM_Policy_Limit_Per_Incident], "en-US"), Text.From([CF_UIM_Policy_Limit_Per_Person], "en-US"), Text.From([CF_UM_Policy_Limit_Per_Incident], "en-US"), Text.From([CF_UM_Policy_Limit_Per_Person], "en-US"), Text.From([CF_Adverse_Policy_Limit_Per_Incident], "en-US"), Text.From([CF_Adverse_Policy_Limit_Per_Person], "en-US"), [CF_Court_Jurisdiction], Text.From([CF_MedPay_Total_Coverage_Amount], "en-US"), [CF_Adverse_Insurance_Policy_No_], [CF_Client_1st_Party_Claim_No_], [CF_Adverse_Claim_No_], [CF_Matter_Stage_Pre_Lit], Text.From([CF_Out_of_State_Client], "en-US"), Text.From([CF_Of_Counsel_Fee_Percentage], "en-US"), Text.From([CF_Referral_Fee_Percentage], "en-US"), Text.From([CF_Initial_Estimated_Value], "en-US"), Text.From([CF_Actual_Distribution_Date], "en-US"), Text.From([CF_Actual_Firm_Fees_Amount], "en-US"), Text.From([CF_Actual_Value], "en-US"), Text.From([CF_TLAW_Originated_Case], "en-US"), [CF_Crystal_Ball_Notes], Text.From([CF_Current_Specials], "en-US"), Text.From([CF_Actual_Settlement_Date], "en-US"), Text.From([CF_Estimated_Settlement_Date], "en-US"), Text.From([CF_Estimated_Firm_Fees_Amount], "en-US"), Text.From([CF_Estimated_Distribution_Date], "en-US"), Text.From([CF_Send_Review], "en-US"), [CF_1st_Party_Policy_No_], [CF_Outbound_Provider_Referral], Text.From([CF_Victim_Case], "en-US"), Text.From([_skyvia_sync], "en-US"), Text.From([StatuteOfLimitationsDueAt], "en-US"), [StatuteOfLimitationsPriority], [StatuteOfLimitationsDescription], [StatuteOfLimitationsStatus], [StatuteOfLimitationsName], Text.From([StatuteOfLimitationsId], "en-US"), [ResponsibleStaffName], Text.From([ResponsibleStaffId], "en-US"), [OriginatingAttorneyName], Text.From([OriginatingAttorneyId], "en-US"), [ResponsibleAttorneyName], Text.From([ResponsibleAttorneyId], "en-US"), [MatterStageName], Text.From([MatterStageId], "en-US"), [PracticeAreaName], Text.From([PracticeAreaId], "en-US"), Text.From([MatterStageUpdatedAt], "en-US"), Text.From([LastActivityDate], "en-US"), Text.From([HasTasks], "en-US"), Text.From([Shared], "en-US"), Text.From([PendingDate], "en-US"), Text.From([CloseDate], "en-US"), Text.From([OpenDate], "en-US"), [BillingMethod], [MaildropAddress], Text.From([Billable], "en-US"), [ClientName], Text.From([ClientId], "en-US"), [ClientReference], [Location], [Status], [Description], [CustomNumber], [DisplayNumber], Text.From([Number], "en-US"), Text.From([UpdatedDate], "en-US"), Text.From([CreatedDate], "en-US"), [Etag], Text.From([Id], "en-US")}, " "), type text),
+				    #"Renamed Columns" = Table.RenameColumns(#"Inserted Merged Column",{{"DisplayNumber", "Display Number"}, {"CreatedDate", "Created Date"}, {"MatterStageName", " Stage Name"}, {"PracticeAreaName", "Practice Area"}, {"ResponsibleAttorneyName", " Responsible Attorney"}})
 				in
-				    DenormalizedMatters_View
+				    #"Renamed Columns"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

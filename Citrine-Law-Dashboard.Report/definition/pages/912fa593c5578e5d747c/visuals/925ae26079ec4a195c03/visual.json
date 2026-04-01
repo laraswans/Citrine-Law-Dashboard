@@ -4,7 +4,7 @@
   "position": {
     "x": 916,
     "y": 248,
-    "z": 8000,
+    "z": 7000,
     "height": 530,
     "width": 888,
     "tabOrder": 9000
@@ -23,11 +23,11 @@
                       "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "PracticeAreaName"
+                  "Property": "Practice Area"
                 }
               },
               "queryRef": "Clio-DenormalizedMatters.PracticeAreaName",
-              "nativeQueryRef": "PracticeAreaName",
+              "nativeQueryRef": "Practice Area",
               "active": true
             }
           ]
@@ -482,7 +482,7 @@
                 "Entity": "Clio-DenormalizedMatters"
               }
             },
-            "Property": "PracticeAreaName"
+            "Property": "Practice Area"
           }
         },
         "type": "Categorical",
@@ -509,7 +509,7 @@
                                 "Source": "c"
                               }
                             },
-                            "Property": "PracticeAreaName"
+                            "Property": "Practice Area"
                           }
                         }
                       ],

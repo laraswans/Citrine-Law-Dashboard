@@ -258,11 +258,6 @@ table Clio-PIMatterAccruals
 		summarizeBy: none
 		sourceColumn: MonthDate
 
-		variation Variation
-			isDefault
-			relationship: bead2a23-a0d3-450f-8a75-1e1a32590b4b
-			defaultHierarchy: LocalDateTable_2ebcbb37-d9a3-427f-91f3-dea02373c9b7.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 		annotation UnderlyingDateTimeDataType = Date

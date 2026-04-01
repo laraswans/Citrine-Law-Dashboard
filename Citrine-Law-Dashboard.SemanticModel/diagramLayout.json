@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 5592.3042653716884,
+        "x": 5955.261595207,
         "y": 0
       },
       "nodes": [
@@ -298,6 +298,42 @@
             "width": 234
           },
           "zIndex": 24
+        },
+        {
+          "location": {
+            "x": 6616.36163941536,
+            "y": 37.097456295659526
+          },
+          "nodeIndex": "Lawmatics-Tasks",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 6850.36163941536,
+            "y": 53.113699011602762
+          },
+          "nodeIndex": "Lawmatics-Task_Assignees",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 7134.36163941536,
+            "y": 39.113699011602762
+          },
+          "nodeIndex": "Lawmatics-Tasks_With_Assignees",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

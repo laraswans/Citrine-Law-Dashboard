@@ -1,0 +1,180 @@
+table Lawmatics-Tasks
+	lineageTag: e2e56989-30ce-4642-ade3-20b035326748
+
+	column id
+		dataType: string
+		lineageTag: f2ac8d99-6b5c-4dc5-99a1-5af7cac8e70c
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column type
+		dataType: string
+		lineageTag: 57195440-2eb7-47f6-a95a-b451d86b7d6a
+		summarizeBy: none
+		sourceColumn: type
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 10be4d47-305f-4c5a-a593-5ac5fd621619
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: e75aa8ed-d9f2-43ef-bdc4-8a537ba88946
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column due_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 14148922-3f4e-407a-96eb-04f470aa808e
+		summarizeBy: none
+		sourceColumn: due_date
+
+		variation Variation
+			isDefault
+			relationship: 2968636d-ce7d-43fc-aeea-831727058419
+			defaultHierarchy: LocalDateTable_a18f77d8-df76-4ab6-9d42-d15d1ed8b1f8.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column done
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 9179643e-30b8-4802-ba73-0c6d743ce25a
+		summarizeBy: none
+		sourceColumn: done
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 95bd5329-69e9-4f70-9b41-9a961064c569
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column priority
+		dataType: string
+		lineageTag: ef7d106b-3220-4b61-8135-bb3170a4ba87
+		summarizeBy: none
+		sourceColumn: priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_by_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 95c08351-254c-4b42-ba06-706e37c115b1
+		summarizeBy: sum
+		sourceColumn: assigned_by_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column recurrence_rule
+		dataType: string
+		lineageTag: b6a920e1-e1b5-4c11-bde3-0c1a8eb0403f
+		summarizeBy: none
+		sourceColumn: recurrence_rule
+
+		annotation SummarizationSetBy = Automatic
+
+	column tags
+		dataType: string
+		lineageTag: 9b4d147b-3252-422c-aab9-6463b709d4b0
+		summarizeBy: none
+		sourceColumn: tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column assignee_users
+		dataType: string
+		lineageTag: 04829e97-1ff2-468b-bcd4-72bcab202b91
+		summarizeBy: none
+		sourceColumn: assignee_users
+
+		annotation SummarizationSetBy = Automatic
+
+	column prospect_id
+		dataType: string
+		lineageTag: 7b8b08c4-60e2-44cd-b8d9-bb643e406120
+		summarizeBy: none
+		sourceColumn: prospect_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column taskable_type
+		dataType: string
+		lineageTag: bfd79027-19d8-4c1a-bc47-e28b5ea4b30e
+		summarizeBy: none
+		sourceColumn: taskable_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 92a14731-3575-4ea8-ab05-fc401a57b769
+		summarizeBy: none
+		sourceColumn: CreatedDate
+
+		variation Variation
+			isDefault
+			relationship: 89bd7ca4-265b-4aa5-8389-2e70799df7b6
+			defaultHierarchy: LocalDateTable_597f2526-c0b9-4c51-8ee3-1fe95ec11f32.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdatedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 588585a2-cbb7-4e63-8732-769bc4b00d60
+		summarizeBy: none
+		sourceColumn: UpdatedDate
+
+		variation Variation
+			isDefault
+			relationship: 34aebc55-1130-4588-8afd-f6594cfc6675
+			defaultHierarchy: LocalDateTable_c6bae963-9d37-4286-a27f-2a0b6a7c4e08.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column _skyvia_sync
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: febb0439-5771-4476-ba95-ba59cae27c84
+		summarizeBy: none
+		sourceColumn: _skyvia_sync
+
+		variation Variation
+			isDefault
+			relationship: 55bf04ac-b7db-4d04-8bd9-8364c2e77db3
+			defaultHierarchy: LocalDateTable_b24e752a-c57c-47d0-8e1a-0e991fb90f88.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Lawmatics-Tasks = m
+		mode: import
+		source =
+				let
+				    Source = GoogleBigQuery.Database([Implementation="2.0"]),
+				    #"caramel-compass-452313-u3_Database" = Source{[Name="caramel-compass-452313-u3",Kind="Database"]}[Data],
+				    lawmatics_Schema = #"caramel-compass-452313-u3_Database"{[Name="lawmatics",Kind="Schema"]}[Data],
+				    Tasks_Table = lawmatics_Schema{[Name="Tasks",Kind="Table"]}[Data]
+				in
+				    Tasks_Table
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

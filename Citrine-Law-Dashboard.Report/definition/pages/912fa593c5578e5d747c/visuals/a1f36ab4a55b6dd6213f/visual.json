@@ -4,10 +4,10 @@
   "position": {
     "x": 108,
     "y": 1594,
-    "z": 11000,
+    "z": 10000,
     "height": 492,
     "width": 1696,
-    "tabOrder": 11000
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "tableEx",
@@ -23,11 +23,11 @@
                       "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "DisplayNumber"
+                  "Property": "Display Number"
                 }
               },
               "queryRef": "Clio-DenormalizedMatters.DisplayNumber",
-              "nativeQueryRef": "DisplayNumber"
+              "nativeQueryRef": "Display Number"
             },
             {
               "field": {
@@ -37,11 +37,11 @@
                       "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "CreatedDate"
+                  "Property": "Created Date"
                 }
               },
               "queryRef": "Clio-DenormalizedMatters.CreatedDate",
-              "nativeQueryRef": "CreatedDate"
+              "nativeQueryRef": "Created Date"
             },
             {
               "field": {
@@ -65,11 +65,11 @@
                       "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "PracticeAreaName"
+                  "Property": "Practice Area"
                 }
               },
               "queryRef": "Clio-DenormalizedMatters.PracticeAreaName",
-              "nativeQueryRef": "PracticeAreaName"
+              "nativeQueryRef": "Practice Area"
             },
             {
               "field": {
@@ -79,11 +79,11 @@
                       "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "ResponsibleAttorneyName"
+                  "Property": " Responsible Attorney"
                 }
               },
               "queryRef": "Clio-DenormalizedMatters.ResponsibleAttorneyName",
-              "nativeQueryRef": "ResponsibleAttorneyName"
+              "nativeQueryRef": " Responsible Attorney"
             },
             {
               "field": {
@@ -93,11 +93,11 @@
                       "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "MatterStageName"
+                  "Property": " Stage Name"
                 }
               },
               "queryRef": "Clio-DenormalizedMatters.MatterStageName",
-              "nativeQueryRef": "MatterStageName"
+              "nativeQueryRef": " Stage Name"
             },
             {
               "field": {
@@ -127,20 +127,6 @@
               "queryRef": "Sum(Clio-DenormalizedMatters.CF_Actual_Value)",
               "nativeQueryRef": "Actual Value",
               "displayName": "Actual Value"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Clio-DenormalizedMatters"
-                    }
-                  },
-                  "Property": "Open in Clio"
-                }
-              },
-              "queryRef": "Clio-DenormalizedMatters.Open in Clio",
-              "nativeQueryRef": "Open in Clio"
             }
           ]
         }
@@ -155,7 +141,7 @@
                     "Entity": "Clio-DenormalizedMatters"
                   }
                 },
-                "Property": "CreatedDate"
+                "Property": "Created Date"
               }
             },
             "direction": "Descending"
@@ -263,75 +249,6 @@
               }
             }
           }
-        },
-        {
-          "properties": {
-            "webURL": {
-              "expr": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Clio-DenormalizedMatters"
-                    }
-                  },
-                  "Property": "Clio URL"
-                }
-              }
-            },
-            "fontColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Conditional": {
-                      "Cases": [
-                        {
-                          "Condition": {
-                            "Comparison": {
-                              "ComparisonKind": 0,
-                              "Left": {
-                                "Measure": {
-                                  "Expression": {
-                                    "SourceRef": {
-                                      "Entity": "Clio-DenormalizedMatters"
-                                    }
-                                  },
-                                  "Property": "Open in Clio"
-                                }
-                              },
-                              "Right": {
-                                "Literal": {
-                                  "Value": "'Open in Clio'"
-                                }
-                              }
-                            },
-                            "Annotations": {
-                              "PowerBI.SQExprEvaluationKind": 1,
-                              "PowerBI.SQExprTextOperatorOption": 2
-                            }
-                          },
-                          "Value": {
-                            "Literal": {
-                              "Value": "'#447793'"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ],
-            "metadata": "Clio-DenormalizedMatters.Open in Clio"
-          }
         }
       ],
       "columnWidth": [
@@ -340,7 +257,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "251D"
+                  "Value": "259D"
                 }
               }
             }
@@ -504,5 +421,6 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  }
+  },
+  "isHidden": true
 }

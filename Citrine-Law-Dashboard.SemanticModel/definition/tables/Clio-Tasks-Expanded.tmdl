@@ -18,12 +18,12 @@ table Clio-Tasks-Expanded
 
 		annotation SummarizationSetBy = Automatic
 
-	column CreatedDate
+	column 'Created Date'
 		dataType: dateTime
 		formatString: mmmm d\, yyyy
 		lineageTag: 69a8fbb7-2b52-4896-a167-e68342b49d49
 		summarizeBy: none
-		sourceColumn: CreatedDate
+		sourceColumn: Created Date
 
 		variation Variation
 			isDefault
@@ -88,12 +88,12 @@ table Clio-Tasks-Expanded
 
 		annotation SummarizationSetBy = Automatic
 
-	column DueDate
+	column 'Due Date'
 		dataType: dateTime
 		formatString: d mmmm\, yyyy
 		lineageTag: 14a39747-8191-495f-8080-bf75de2cf6df
 		summarizeBy: none
-		sourceColumn: DueDate
+		sourceColumn: Due Date
 
 		variation Variation
 			isDefault
@@ -225,11 +225,11 @@ table Clio-Tasks-Expanded
 
 		annotation SummarizationSetBy = Automatic
 
-	column custom_due_status
+	column 'Due Date Status'
 		dataType: string
 		lineageTag: cf7edd97-f810-4272-a426-fa99f700874e
 		summarizeBy: none
-		sourceColumn: custom_due_status
+		sourceColumn: Due Date Status
 
 		annotation SummarizationSetBy = Automatic
 
@@ -250,11 +250,11 @@ table Clio-Tasks-Expanded
 
 		annotation SummarizationSetBy = Automatic
 
-	column assignee_name
+	column Assignee
 		dataType: string
 		lineageTag: 9eda9edf-6ced-4322-855d-d951945ee79f
 		summarizeBy: none
-		sourceColumn: assignee_name
+		sourceColumn: Assignee
 
 		annotation SummarizationSetBy = Automatic
 
@@ -369,9 +369,10 @@ table Clio-Tasks-Expanded
 				    Source = GoogleBigQuery.Database([Implementation="2.0"]),
 				    #"caramel-compass-452313-u3_Database" = Source{[Name="caramel-compass-452313-u3",Kind="Database"]}[Data],
 				    clio_manage_Schema = #"caramel-compass-452313-u3_Database"{[Name="clio_manage",Kind="Schema"]}[Data],
-				    #"Tasks-Expanded_View" = clio_manage_Schema{[Name="Tasks-Expanded",Kind="View"]}[Data]
+				    #"Tasks-Expanded_View" = clio_manage_Schema{[Name="Tasks-Expanded",Kind="View"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(#"Tasks-Expanded_View",{{"custom_due_status", "Due Date Status"}, {"assignee_name", "Assignee"}, {"DueDate", "Due Date"}, {"CreatedDate", "Created Date"}})
 				in
-				    #"Tasks-Expanded_View"
+				    #"Renamed Columns"
 
 	annotation PBI_ResultType = Exception
 

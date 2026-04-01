@@ -249,7 +249,7 @@
                 "Entity": "Clio-DenormalizedMatters"
               }
             },
-            "Property": "PracticeAreaName"
+            "Property": "Practice Area"
           }
         },
         "type": "Categorical",
@@ -276,7 +276,7 @@
                                 "Source": "c"
                               }
                             },
-                            "Property": "PracticeAreaName"
+                            "Property": "Practice Area"
                           }
                         }
                       ],

@@ -4,10 +4,10 @@
   "position": {
     "x": 1110,
     "y": 806,
-    "z": 12001,
+    "z": 11000,
     "height": 762,
     "width": 694,
-    "tabOrder": 12001
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "tableEx",
@@ -23,11 +23,11 @@
                       "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "DisplayNumber"
+                  "Property": "Display Number"
                 }
               },
               "queryRef": "Clio-DenormalizedMatters.DisplayNumber",
-              "nativeQueryRef": "DisplayNumber"
+              "nativeQueryRef": "Display Number"
             },
             {
               "field": {
@@ -37,11 +37,11 @@
                       "Entity": "Clio-DenormalizedMatters"
                     }
                   },
-                  "Property": "CreatedDate"
+                  "Property": "Created Date"
                 }
               },
               "queryRef": "Clio-DenormalizedMatters.CreatedDate",
-              "nativeQueryRef": "CreatedDate"
+              "nativeQueryRef": "Created Date"
             },
             {
               "field": {
@@ -447,7 +447,7 @@
                 "Entity": "Clio-DenormalizedMatters"
               }
             },
-            "Property": "CreatedDate"
+            "Property": "Created Date"
           }
         },
         "type": "Categorical"
@@ -527,7 +527,7 @@
                 "Entity": "Clio-DenormalizedMatters"
               }
             },
-            "Property": "DisplayNumber"
+            "Property": "Display Number"
           }
         },
         "type": "Categorical"
@@ -558,7 +558,7 @@
                 "Entity": "Clio-DenormalizedMatters"
               }
             },
-            "Property": "MatterStageName"
+            "Property": " Stage Name"
           }
         },
         "type": "Categorical",
@@ -589,7 +589,7 @@
                 "Entity": "Clio-DenormalizedMatters"
               }
             },
-            "Property": "PracticeAreaName"
+            "Property": "Practice Area"
           }
         },
         "type": "Categorical",
@@ -605,7 +605,7 @@
                 "Entity": "Clio-DenormalizedMatters"
               }
             },
-            "Property": "ResponsibleAttorneyName"
+            "Property": " Responsible Attorney"
           }
         },
         "type": "Categorical",

@@ -1,0 +1,248 @@
+table Lawmatics-Tasks_With_Assignees
+	lineageTag: 9736ff82-6993-4596-9ece-fe3670a36234
+
+	measure 'Task URL' = "https://app.lawmatics.com/tasks/" & SELECTEDVALUE('Lawmatics-Tasks_With_Assignees'[id]) & "/edit"
+		lineageTag: 82a603d4-b028-49e5-abc0-52351e6cd4ab
+
+	measure 'Open Task' = "Open Task"
+		lineageTag: f11b51c7-964d-4c72-84e3-2a2b8a4b1efc
+
+	column id
+		dataType: string
+		lineageTag: 3179dee7-c2fe-4cd0-a935-7269f0240747
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column type
+		dataType: string
+		lineageTag: f57f9fc5-3b03-4ccf-aa2b-839d9ebbd0ad
+		summarizeBy: none
+		sourceColumn: type
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: e1b623db-ae5e-417a-9aaf-58474f428968
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: 8ec2eea6-4792-47fd-ade5-7d1674192b24
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	column due_date
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: 936ab393-26f5-49ad-824f-6c57bf37cda4
+		summarizeBy: none
+		sourceColumn: due_date
+
+		variation Variation
+			isDefault
+			relationship: 68f8e03b-2839-4eaf-b41b-c022330f20d6
+			defaultHierarchy: LocalDateTable_c4da18e6-98ef-4530-9010-e538ddff0b92.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column done
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 73ab741e-f0d8-4e53-b215-c8efe8dc2ccb
+		summarizeBy: none
+		sourceColumn: done
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 92b334b1-94c0-43c4-8993-aae3a6d06ed2
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column priority
+		dataType: string
+		lineageTag: a8339eab-579c-43e3-afd8-280693b58c48
+		summarizeBy: none
+		sourceColumn: priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_by_id
+		dataType: int64
+		formatString: 0
+		lineageTag: f3d88351-58a7-4135-bdc2-68190846aa6b
+		summarizeBy: sum
+		sourceColumn: assigned_by_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column recurrence_rule
+		dataType: string
+		lineageTag: a8baa1be-bfc6-4eb5-9f72-fc982e17914f
+		summarizeBy: none
+		sourceColumn: recurrence_rule
+
+		annotation SummarizationSetBy = Automatic
+
+	column tags
+		dataType: string
+		lineageTag: e65ded63-3cfc-4586-a8da-ccc080178708
+		summarizeBy: none
+		sourceColumn: tags
+
+		annotation SummarizationSetBy = Automatic
+
+	column prospect_id
+		dataType: string
+		lineageTag: 16ba5dd9-5187-4390-8051-8d3c3e7f100f
+		summarizeBy: none
+		sourceColumn: prospect_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column taskable_type
+		dataType: string
+		lineageTag: 668146e8-890b-4e8a-8bd2-0dbe39007792
+		summarizeBy: none
+		sourceColumn: taskable_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column CreatedDate
+		dataType: dateTime
+		formatString: d mmmm\, yyyy
+		lineageTag: 2a8d87d3-60bc-48f8-afae-2b038d658f31
+		summarizeBy: none
+		sourceColumn: CreatedDate
+
+		variation Variation
+			isDefault
+			relationship: 01355cd7-a451-4b52-a5cb-df7e2c1a79ab
+			defaultHierarchy: LocalDateTable_04754b2e-2595-497a-b018-2c727eee9561.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column UpdatedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f1c6a236-3f34-4b62-9c87-4a9b3e895fb0
+		summarizeBy: none
+		sourceColumn: UpdatedDate
+
+		variation Variation
+			isDefault
+			relationship: eb3e2cb8-399d-4eef-8a5d-f6f676e150e4
+			defaultHierarchy: LocalDateTable_90eb9302-331f-4231-8097-6c1fad1ae091.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column _skyvia_sync
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 180caee1-eacb-4874-9890-bfe34da02878
+		summarizeBy: none
+		sourceColumn: _skyvia_sync
+
+		variation Variation
+			isDefault
+			relationship: ffa27b7a-777a-467f-936b-5096b843534b
+			defaultHierarchy: LocalDateTable_5aaf8101-ada7-47f3-bcd6-72ff1c706cab.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column assignee_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 07819a19-c68f-432e-92f3-d647a17bf30e
+		summarizeBy: sum
+		sourceColumn: assignee_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_by_name
+		dataType: string
+		lineageTag: facf94ac-832d-4303-bab0-5c6326454197
+		summarizeBy: none
+		sourceColumn: assigned_by_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column assignee_1
+		dataType: string
+		lineageTag: 61cd00fa-023d-4b84-a242-06ff5460844e
+		summarizeBy: none
+		sourceColumn: assignee_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column assignee_2
+		dataType: string
+		lineageTag: a8efb645-94de-459d-959a-3e8b811b09f9
+		summarizeBy: none
+		sourceColumn: assignee_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column assignee_3
+		dataType: string
+		lineageTag: 13d37b77-e1f9-4a5d-9807-01650e1b38c0
+		summarizeBy: none
+		sourceColumn: assignee_3
+
+		annotation SummarizationSetBy = Automatic
+
+	column assignee_4
+		dataType: string
+		lineageTag: 3413ffae-119a-462b-aaa0-868c7e97bc7f
+		summarizeBy: none
+		sourceColumn: assignee_4
+
+		annotation SummarizationSetBy = Automatic
+
+	column assignee_5
+		dataType: string
+		lineageTag: d7d023c1-6892-4e2a-98b7-209fe9401b1a
+		summarizeBy: none
+		sourceColumn: assignee_5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Due Date Status'
+		dataType: string
+		lineageTag: 9d9733b2-9b41-4f84-97ac-239a37fa707b
+		summarizeBy: none
+		sourceColumn: Due Date Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Lawmatics-Tasks_With_Assignees = m
+		mode: import
+		source =
+				let
+				    Source = GoogleBigQuery.Database([Implementation="2.0"]),
+				    #"caramel-compass-452313-u3_Database" = Source{[Name="caramel-compass-452313-u3",Kind="Database"]}[Data],
+				    lawmatics_Schema = #"caramel-compass-452313-u3_Database"{[Name="lawmatics",Kind="Schema"]}[Data],
+				    Tasks_With_Assignees_View = lawmatics_Schema{[Name="Tasks_With_Assignees",Kind="View"]}[Data],
+				    #"Renamed Columns" = Table.RenameColumns(Tasks_With_Assignees_View,{{"due_date_status", "Due Date Status"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1492,6 +1492,11 @@ table Lawmatics-Prospects-Expanded
 		lineageTag: bb4bc385-1121-4fa3-bf20-19b7210bffb3
 		summarizeBy: none
 
+		variation Variation
+			isDefault
+			relationship: 2e745b00-a035-4c26-ab38-957366d60009
+			defaultHierarchy: LocalDateTable_81092206-3cc8-4eba-bc5c-eec6c74d51e0.'Date Hierarchy'
+
 	column 'Start of Month' = DATE(YEAR('Lawmatics-Prospects-Expanded'[CreatedDate]), MONTH('Lawmatics-Prospects-Expanded'[CreatedDate]), 1)
 		dataType: dateTime
 		formatString: Long Date
@@ -1755,6 +1760,14 @@ table Lawmatics-Prospects-Expanded
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Search Box'
+		dataType: string
+		lineageTag: 0f09efc6-19ae-4d34-afd2-6d2500f4203e
+		summarizeBy: none
+		sourceColumn: Search Box
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Lawmatics-Prospects-Expanded = m
 		mode: import
 		source =
@@ -1762,9 +1775,10 @@ table Lawmatics-Prospects-Expanded
 				    Source = GoogleBigQuery.Database([Implementation="2.0"]),
 				    #"caramel-compass-452313-u3_Database" = Source{[Name="caramel-compass-452313-u3",Kind="Database"]}[Data],
 				    lawmatics_Schema = #"caramel-compass-452313-u3_Database"{[Name="lawmatics",Kind="Schema"]}[Data],
-				    #"Prospects-Expanded_View" = lawmatics_Schema{[Name="Prospects-Expanded",Kind="View"]}[Data]
+				    #"Prospects-Expanded_View" = lawmatics_Schema{[Name="Prospects-Expanded",Kind="View"]}[Data],
+				    #"Inserted Merged Column" = Table.AddColumn(#"Prospects-Expanded_View", "Search Box", each Text.Combine({[id], [type], [name], [first_name], [last_name], [email], [phone], [status], [address], [city], [state], [country], [stage_id], [stage_name], [source_id], [source_name], [practice_area_id], [practice_area_name], [campaign_id], [campaign_name], Text.From([CreatedDate], "en-US"), Text.From([UpdatedDate], "en-US"), Text.From([created_at], "en-US"), Text.From([updated_at], "en-US"), Text.From([_skyvia_sync], "en-US"), [CF_Charge], [CF_Type_of_Charge], [CF_Court_Jurisdiction], [CF_Case_Number], [CF_Next_Court_Date], [CF_Admin_Per_Say_Issued], [CF_Breath_Test_Submitted], [CF_Breath_Test_Results], [CF_Blood_Draw_Taken], [CF_Pre_Indictment_Matter], [CF_Bond_Issued], [CF_Has_Bond_Been_Posted], [CF_Date_of_Incident], [CF_Location_of_Incident], [CF_State_Where_Incident_Occurred], [CF_Address_Cross_Streets], [CF_Investigating_Agency], [CF_LE_Report_Number], [CF_Detailed_Narrative], [CF_Brief_Description_of_Incident], [CF_Case_Description], [CF_Additional_Notes], [CF_Is_PNC_In_Custody], [CF_Are_Charges_Pending], [CF_Prior_Convictions], [CF_Prior_Criminal_History_Charges], [CF_Currently_Have_Representation], [CF_Name_of_Current_Representation], [CF_Was_There_A_Victim], [CF_Who_Was_The_Victim], [CF_Victim_Present_At_Consultation], [CF_Weapon_Involved], [CF_Type_of_Injury], [CF_What_Are_Your_Injuries], [CF_Were_You_At_Fault], [CF_Injured_Because_of_Incident], [CF_Plan_to_Seek_Further_Treatment], [CF_Transported_By_Ambulance], [CF_Ambulance_Company], [CF_Did_LE_Arrive_On_Scene], [CF_Was_Anyone_Cited], [CF_Passenger_Count], [CF_Property_Damage_Description], [CF_Police_Report_Number], [CF_Primary_Contact_Vehicle_Info], [CF_Person_Ticketed], [CF_Comments_on_Person_Ticketed], [CF_Defendant_Vehicle_Info], [CF_Driver_License], [CF_Name_of_Defendant], [CF_Adverse_Insurance_Name], [CF_Adverse_Claim_No], [CF_Adverse_Insurance_Policy_No], [CF_Client_Health_Insurance_Name], [CF_Client_Health_Insurance_Policy_No], [CF_First_Party_Coverage_UM_UIM], [CF_Client_Vehicle_Insurance_Carrier], [CF_Client_1st_Party_Claim_No], [CF_Adverse_Policy_Limit_Per_Person], [CF_Adverse_Policy_Limit_Per_Incident], [CF_Client_UM_Policy_Per_Person], [CF_Client_UM_Policy_Per_Incident], [CF_Current_Specials], [CF_MedPay_Total_Coverage_Amount], [CF_Preferred_Language], [CF_Citizenship], [CF_Marital_Status], [CF_Out_of_State_Client], [CF_Communication_Preference], [CF_Same_Mailing_Address], [CF_Mailing_Address_Full], [CF_Qualified_Lead], [CF_Referred_To_Us_By], [CF_Referred_Case_Out_To], [CF_Next_Steps], [CF_Consultation_Outcome], [CF_Retained_or_Email_Only], [CF_Police_Report_Available], [CF_Send_Form_Upload_Email], [CF_Plaintiff], [CF_Billing_Arrangement], [CF_Fee_Agreement_Type_Criminal], [CF_Amount_Due_at_Signing], [CF_Balance_Due_In], [CF_Balance_Due_In_Full], [CF_Payments_Start], [CF_Send_Affirm_Offer], [CF_Send_Review_Request], [CF_Type_of_Wrongful_Death], [CF_Relationship_to_Decedent], [CF_Company_Negligence], [CF_Company_Incident_Report], [CF_Company_Incident_Report_Number], [CF_Incident_at_Place_of_Employment], [CF_Ok_With_500_Pre_Indictment_Fee], [CF_Ok_With_500_Jail_Visit_Fee], [CF_Where_Being_Treated], [CF_Did_You_Seek_Treatment]}, " "), type text)
 				in
-				    #"Prospects-Expanded_View"
+				    #"Inserted Merged Column"
 
 	annotation PBI_ResultType = Table
 
